@@ -6353,6 +6353,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
         <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">legend_title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="n">legend_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">classification_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span>
@@ -6381,6 +6382,9 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">                &#39;NaturalBreaks&#39;, &#39;Quantiles&#39;, &#39;Percentiles&#39;, &#39;StdMean&#39;,</span>
 <span class="sd">                &#39;UserDefined&#39;). Arguments can be passed in classification_kwds.</span>
 <span class="sd">            k (int, optional): Number of classes (ignored if scheme is None or if column is categorical). Default to 5.</span>
+<span class="sd">            add_legend (bool, optional): Whether to add a legend to the map. Defaults to True.</span>
+<span class="sd">            legend_title (str, optional): The title of the legend. Defaults to None.</span>
+<span class="sd">            legend_position (str, optional): The position of the legend. Can be &#39;topleft&#39;, &#39;topright&#39;, &#39;bottomleft&#39;, or &#39;bottomright&#39;. Defaults to &#39;bottomright&#39;.</span>
 <span class="sd">            legend_kwds (dict, optional): Keyword arguments to pass to :func:`matplotlib.pyplot.legend` or `matplotlib.pyplot.colorbar`. Defaults to None.</span>
 <span class="sd">                Keyword arguments to pass to :func:`matplotlib.pyplot.legend` or</span>
 <span class="sd">                Additional accepted keywords when `scheme` is specified:</span>
@@ -6466,7 +6470,9 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">legend_title</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="n">legend_dict</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span>
+                <span class="n">title</span><span class="o">=</span><span class="n">legend_title</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="n">legend_dict</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">legend_position</span>
+            <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
@@ -7285,7 +7291,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
 
 
 <h3 id="leafmap.leafmap.Map.add_data" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;Quantiles&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">classification_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hover_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;Quantiles&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">classification_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hover_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_data" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -7354,6 +7360,24 @@ under the hood. Supported are all schemes provided by mapclassify (e.g.
         <td><code>int</code></td>
         <td><p>Number of classes (ignored if scheme is None or if column is categorical). Default to 5.</p></td>
         <td><code>5</code></td>
+      </tr>
+      <tr>
+        <td><code>add_legend</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to add a legend to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>legend_title</code></td>
+        <td><code>str</code></td>
+        <td><p>The title of the legend. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>legend_position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the legend. Can be 'topleft', 'topright', 'bottomleft', or 'bottomright'. Defaults to 'bottomright'.</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
       </tr>
       <tr>
         <td><code>legend_kwds</code></td>
@@ -7446,6 +7470,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">legend_title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">legend_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="n">legend_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">classification_kwds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span>
@@ -7474,6 +7499,9 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 <span class="sd">            &#39;NaturalBreaks&#39;, &#39;Quantiles&#39;, &#39;Percentiles&#39;, &#39;StdMean&#39;,</span>
 <span class="sd">            &#39;UserDefined&#39;). Arguments can be passed in classification_kwds.</span>
 <span class="sd">        k (int, optional): Number of classes (ignored if scheme is None or if column is categorical). Default to 5.</span>
+<span class="sd">        add_legend (bool, optional): Whether to add a legend to the map. Defaults to True.</span>
+<span class="sd">        legend_title (str, optional): The title of the legend. Defaults to None.</span>
+<span class="sd">        legend_position (str, optional): The position of the legend. Can be &#39;topleft&#39;, &#39;topright&#39;, &#39;bottomleft&#39;, or &#39;bottomright&#39;. Defaults to &#39;bottomright&#39;.</span>
 <span class="sd">        legend_kwds (dict, optional): Keyword arguments to pass to :func:`matplotlib.pyplot.legend` or `matplotlib.pyplot.colorbar`. Defaults to None.</span>
 <span class="sd">            Keyword arguments to pass to :func:`matplotlib.pyplot.legend` or</span>
 <span class="sd">            Additional accepted keywords when `scheme` is specified:</span>
@@ -7559,7 +7587,9 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">add_legend</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">legend_title</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="n">legend_dict</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">legend_title</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="n">legend_dict</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">legend_position</span>
+        <span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
