@@ -319,8 +319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../maps/" class="md-nav__link">
-        Interactive Maps
+      <a href="https://demo.leafmap.org" class="md-nav__link">
+        JupyterLite
       </a>
     </li>
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://streamlit.gishub.org" class="md-nav__link">
+      <a href="https://multipage-app.streamlit.app" class="md-nav__link">
         Streamlit App
       </a>
     </li>
@@ -1312,6 +1312,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.image_to_numpy" class="md-nav__link">
     image_to_numpy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.is_jupyterlite" class="md-nav__link">
+    is_jupyterlite()
   </a>
   
 </li>
@@ -3754,6 +3761,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.is_jupyterlite" class="md-nav__link">
+    is_jupyterlite()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.is_on_aws" class="md-nav__link">
     is_on_aws()
   </a>
@@ -4627,7 +4641,7 @@ The_national_map_USGS        </code>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;USE_MKDOCS&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> 
+            <span class="k">return</span>
 
         <span class="k">if</span> <span class="n">out_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -4960,7 +4974,7 @@ Exposes most of the documented API. Defaults to {}.</p></td>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;USE_MKDOCS&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> 
+        <span class="k">return</span>
 
     <span class="k">if</span> <span class="n">out_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -10457,8 +10471,13 @@ for compatibility with the new point_format. The file version will not be downgr
 <span class="sd">    Returns:</span>
 <span class="sd">        str: The output file path.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="kn">import</span> <span class="nn">gdown</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">gdown</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;The gdown package is required for this function. Use `pip install gdown` to install it.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
 
     <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
@@ -10625,7 +10644,14 @@ for compatibility with the new point_format. The file version will not be downgr
 <span class="sd">    Returns:</span>
 <span class="sd">        list: List of files downloaded, or None if failed.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">gdown</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">gdown</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;The gdown package is required for this function. Use `pip install gdown` to install it.&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
 
     <span class="n">files</span> <span class="o">=</span> <span class="n">gdown</span><span class="o">.</span><span class="n">download_folder</span><span class="p">(</span>
         <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">use_cookies</span><span class="p">,</span> <span class="n">remaining_ok</span>
@@ -10942,7 +10968,7 @@ Used for reading a region URL|filepath.</p></td>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;USE_MKDOCS&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> 
+        <span class="k">return</span>
 
     <span class="n">TNM</span> <span class="o">=</span> <span class="n">The_national_map_USGS</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">return_url</span><span class="p">:</span>
@@ -14757,7 +14783,7 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
       <tr>
         <td><code>dtype</code></td>
         <td><code>str</code></td>
-        <td><p>Data type, such as unit8, float32. For more info, 
+        <td><p>Data type, such as unit8, float32. For more info,
 see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p></td>
         <td><code>&#39;uint8&#39;</code></td>
       </tr>
@@ -14804,14 +14830,23 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">image_filesize</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">cellsize</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="n">source_crs</span><span class="o">=</span><span class="s2">&quot;epsg:4326&quot;</span><span class="p">,</span> <span class="n">dst_crs</span><span class="o">=</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">image_filesize</span><span class="p">(</span>
+    <span class="n">region</span><span class="p">,</span>
+    <span class="n">cellsize</span><span class="p">,</span>
+    <span class="n">bands</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;MB&quot;</span><span class="p">,</span>
+    <span class="n">source_crs</span><span class="o">=</span><span class="s2">&quot;epsg:4326&quot;</span><span class="p">,</span>
+    <span class="n">dst_crs</span><span class="o">=</span><span class="s2">&quot;epsg:3857&quot;</span><span class="p">,</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Calculate the size of an image in a given region and cell size.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        region (list): A bounding box in the format of [minx, miny, maxx, maxy].</span>
 <span class="sd">        cellsize (float): The resolution of the image.</span>
 <span class="sd">        bands (int, optional): Number of bands. Defaults to 1.</span>
-<span class="sd">        dtype (str, optional): Data type, such as unit8, float32. For more info, </span>
+<span class="sd">        dtype (str, optional): Data type, such as unit8, float32. For more info,</span>
 <span class="sd">            see https://numpy.org/doc/stable/user/basics.types.html. Defaults to &#39;uint8&#39;.</span>
 <span class="sd">        unit (str, optional): The unit of the output. Defaults to &#39;MB&#39;.</span>
 <span class="sd">        source_crs (str, optional): The CRS of the region. Defaults to &#39;epsg:4326&#39;.</span>
@@ -14830,22 +14865,34 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">region</span><span class="p">):</span>
             <span class="n">region</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">region</span><span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">dst_crs</span><span class="p">)</span><span class="o">.</span><span class="n">total_bounds</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">region</span> <span class="o">=</span> <span class="n">bbox_to_gdf</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">source_crs</span><span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">dst_crs</span><span class="p">)</span><span class="o">.</span><span class="n">total_bounds</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="n">region</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">bbox_to_gdf</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">source_crs</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">dst_crs</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">total_bounds</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid input region.&quot;</span><span class="p">)</span>
 
-        <span class="nb">bytes</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span>
-            <span class="p">[</span>
-                <span class="nb">int</span><span class="p">((</span><span class="n">region</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">cellsize</span><span class="p">),</span>
-                <span class="nb">int</span><span class="p">((</span><span class="n">region</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">region</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">cellsize</span><span class="p">),</span>
-                <span class="n">bands</span><span class="p">,</span>
-            <span class="p">]</span>
-        <span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span>
+        <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="nb">int</span><span class="p">((</span><span class="n">region</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">region</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">cellsize</span><span class="p">),</span>
+                    <span class="nb">int</span><span class="p">((</span><span class="n">region</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">region</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">cellsize</span><span class="p">),</span>
+                    <span class="n">bands</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span>
+        <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">region</span> <span class="o">=</span> <span class="n">bbox_to_gdf</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">source_crs</span><span class="p">)</span>
 
-        <span class="nb">bytes</span> <span class="o">=</span> <span class="n">vector_area</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dst_crs</span><span class="p">)</span> <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cellsize</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span> <span class="o">*</span> <span class="n">bands</span>
+        <span class="nb">bytes</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">vector_area</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dst_crs</span><span class="p">)</span>
+            <span class="o">/</span> <span class="nb">pow</span><span class="p">(</span><span class="n">cellsize</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">itemsize</span>
+            <span class="o">*</span> <span class="n">bands</span>
+        <span class="p">)</span>
 
     <span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
@@ -15444,6 +15491,57 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 
   </div>
 
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.is_jupyterlite" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_jupyterlite</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.common.is_jupyterlite" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Check if the current notebook is running on JupyterLite.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>book</code></td>
+      <td><p>True if the notebook is running on JupyterLite.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_jupyterlite</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Check if the current notebook is running on JupyterLite.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        book: True if the notebook is running on JupyterLite.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="k">if</span> <span class="s2">&quot;pyodide&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
 
 
 

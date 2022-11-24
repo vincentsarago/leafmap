@@ -319,8 +319,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../maps/" class="md-nav__link">
-        Interactive Maps
+      <a href="https://demo.leafmap.org" class="md-nav__link">
+        JupyterLite
       </a>
     </li>
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://streamlit.gishub.org" class="md-nav__link">
+      <a href="https://multipage-app.streamlit.app" class="md-nav__link">
         Streamlit App
       </a>
     </li>
@@ -3075,7 +3075,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
 
             <span class="k">def</span> <span class="nf">handle_draw</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">geo_json</span><span class="p">):</span>
-                <span class="kn">import</span> <span class="nn">ipysheet</span>
 
                 <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">geo_json</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]:</span>
                     <span class="k">del</span> <span class="n">geo_json</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;style&quot;</span><span class="p">]</span>
@@ -3101,6 +3100,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                             <span class="bp">self</span><span class="o">.</span><span class="n">draw_features</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
 
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_mode</span><span class="p">:</span>
+                    <span class="kn">import</span> <span class="nn">ipysheet</span>
+
                     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_output</span><span class="p">:</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">edit_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">edit_sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
