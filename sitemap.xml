@@ -131,11 +131,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://leafmap.org/notebooks/00_notebook_template/</loc>
-         <lastmod>2022-11-25</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://leafmap.org/notebooks/01_leafmap_intro/</loc>
          <lastmod>2022-11-25</lastmod>
          <changefreq>daily</changefreq>
