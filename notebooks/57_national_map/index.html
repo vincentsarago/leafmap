@@ -2929,7 +2929,8 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://githubtocolab.com/giswqs/leafmap/blob/master/examples/notebooks/57_national_map.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="image"></a>
+<p><a href="https://demo.leafmap.org/lab/index.html?path=notebooks/57_national_map.ipynb"><img src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" alt="image"></a>
+<a href="https://githubtocolab.com/giswqs/leafmap/blob/master/examples/notebooks/57_national_map.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="image"></a>
 <a href="https://gishub.org/leafmap-binder"><img src="https://mybinder.org/badge_logo.svg" alt="image"></a></p>
 <h3 id="downloading-various-shapes-from-the-national-map">Downloading various shapes from the National Map<a class="anchor-link" href="#downloading-various-shapes-from-the-national-map">&#182;</a></h3><p>The national map (TNM) is a catalog of <em>topological</em> datasources maintained by the USGS.</p>
 <ul>
@@ -2969,9 +2970,41 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># !pip install leafmap</span>
+</pre></div>
+<div id="cell-1" class="clipboard-copy-txt"># !pip install leafmap</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">leafmap</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">import leafmap</div>
+<div id="cell-2" class="clipboard-copy-txt">import leafmap</div>
     
         </div>
     </div>
@@ -2998,12 +3031,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-2">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3015,7 +3048,7 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">The_national_map_USGS</span><span class="p">()</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">TNM = leafmap.The_national_map_USGS()</div>
+<div id="cell-3" class="clipboard-copy-txt">TNM = leafmap.The_national_map_USGS()</div>
     
         </div>
     </div>
@@ -3041,12 +3074,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3058,7 +3091,7 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">datasets</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">TNM.datasets</div>
+<div id="cell-4" class="clipboard-copy-txt">TNM.datasets</div>
     
         </div>
     </div>
@@ -3076,7 +3109,7 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -3131,12 +3164,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3148,7 +3181,7 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">prodFormats</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">TNM.prodFormats</div>
+<div id="cell-5" class="clipboard-copy-txt">TNM.prodFormats</div>
     
         </div>
     </div>
@@ -3166,7 +3199,7 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
@@ -3209,12 +3242,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3226,7 +3259,7 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">()[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">TNM.find_details().keys(), TNM.find_details()['total']</div>
+<div id="cell-6" class="clipboard-copy-txt">TNM.find_details().keys(), TNM.find_details()['total']</div>
     
         </div>
     </div>
@@ -3244,7 +3277,7 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
@@ -3278,12 +3311,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3295,7 +3328,7 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">()[</span><span class="s1">&#39;items&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">TNM.find_details()['items'][0]</div>
+<div id="cell-7" class="clipboard-copy-txt">TNM.find_details()['items'][0]</div>
     
         </div>
     </div>
@@ -3313,7 +3346,7 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -3373,12 +3406,12 @@ Licensed under the Apache License, Version 2.0.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3396,7 +3429,7 @@ Licensed under the Apache License, Version 2.0.
 
 <span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">params = {
+<div id="cell-8" class="clipboard-copy-txt">params = {
     'q': 'National Elevation Dataset (NED) 1/3 arc-second',
     'polyCode': '01010002',
     'polyType': 'huc8',
@@ -3420,7 +3453,7 @@ TNM.find_details(**params)['total']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -3442,12 +3475,12 @@ TNM.find_details(**params)['total']</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3470,7 +3503,7 @@ TNM.find_details(**params)['total']</div>
 
 <span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">params = {
+<div id="cell-9" class="clipboard-copy-txt">params = {
     'prodFormats': 'LAS,LAZ',
     'datasets': 'Lidar Point Cloud (LPC)',
     'polygon': [
@@ -3499,7 +3532,7 @@ TNM.find_details(**params)['total']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -3533,12 +3566,12 @@ TNM.find_details(**params)['total']</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3550,7 +3583,7 @@ TNM.find_details(**params)['total']</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">help(TNM.find_details)</div>
+<div id="cell-10" class="clipboard-copy-txt">help(TNM.find_details)</div>
     
         </div>
     </div>
@@ -3640,12 +3673,12 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3657,7 +3690,7 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">()[</span><span class="s1">&#39;items&#39;</span><span class="p">])</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">len(TNM.find_details()['items'])</div>
+<div id="cell-11" class="clipboard-copy-txt">len(TNM.find_details()['items'])</div>
     
         </div>
     </div>
@@ -3675,7 +3708,7 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -3697,12 +3730,12 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3714,7 +3747,7 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="nb">max</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)[</span><span class="s1">&#39;items&#39;</span><span class="p">])</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">len(TNM.find_details(max=1000000)['items'])</div>
+<div id="cell-12" class="clipboard-copy-txt">len(TNM.find_details(max=1000000)['items'])</div>
     
         </div>
     </div>
@@ -3732,7 +3765,7 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -3766,12 +3799,12 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3792,7 +3825,7 @@ find_details(bbox: List[float] = None, polygon: List[Tuple[float, float]] = None
     <span class="o">**</span><span class="n">params</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)[</span><span class="s1">&#39;items&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">params = {
+<div id="cell-13" class="clipboard-copy-txt">params = {
     'q': 'National Elevation Dataset (NED) 1/3 arc-second',
     'polyCode': '01010002',
     'polyType': 'huc8',
@@ -3819,7 +3852,7 @@ TNM.find_details(**params, offset=0)['items'][0] == TNM.find_details(
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -3852,12 +3885,12 @@ TNM.find_details(**params, offset=0)['items'][0] == TNM.find_details(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3870,7 +3903,7 @@ TNM.find_details(**params, offset=0)['items'][0] == TNM.find_details(
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">m = leafmap.Map(center=[40, -100], zoom=4)
+<div id="cell-14" class="clipboard-copy-txt">m = leafmap.Map(center=[40, -100], zoom=4)
 m</div>
     
         </div>
@@ -3889,12 +3922,12 @@ m</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe src="about:blank" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" data-html=%3C%21DOCTYPE%20html%3E%0A%3Chead%3E%20%20%20%20%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22content-type%22%20content%3D%22text/html%3B%20charset%3DUTF-8%22%20/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20L_NO_TOUCH%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L_DISABLE_3D%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%0A%20%20%20%20%3Cstyle%3Ehtml%2C%20body%20%7Bwidth%3A%20100%25%3Bheight%3A%20100%25%3Bmargin%3A%200%3Bpadding%3A%200%3B%7D%3C/style%3E%0A%20%20%20%20%3Cstyle%3E%23map%20%7Bposition%3Aabsolute%3Btop%3A0%3Bbottom%3A0%3Bright%3A0%3Bleft%3A0%3B%7D%3C/style%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//code.jquery.com/jquery-1.12.4.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css%22/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initial-scale%3D1.0%2C%20maximum-scale%3D1.0%2C%20user-scalable%3Dno%22%20/%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23map_fa1ccb6a6a204d869fcc466277b52956%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20left%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20top%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/style%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/gh/ljagis/leaflet-measure%402.1.7/dist/leaflet-measure.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/gh/ljagis/leaflet-measure%402.1.7/dist/leaflet-measure.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css%22/%3E%0A%3C/head%3E%0A%3Cbody%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22folium-map%22%20id%3D%22map_fa1ccb6a6a204d869fcc466277b52956%22%20%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%3C/body%3E%0A%3Cscript%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20map_fa1ccb6a6a204d869fcc466277b52956%20%3D%20L.map%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22map_fa1ccb6a6a204d869fcc466277b52956%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20center%3A%20%5B40.0%2C%20-100.0%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20crs%3A%20L.CRS.EPSG3857%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoom%3A%204%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoomControl%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preferCanvas%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawExport%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layersControl%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.scale%28%29.addTo%28map_fa1ccb6a6a204d869fcc466277b52956%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20tile_layer_585ea40d172b4859b487d83b3811de59%20%3D%20L.tileLayer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22https%3A//%7Bs%7D.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22attribution%22%3A%20%22Data%20by%20%5Cu0026copy%3B%20%5Cu003ca%20href%3D%5C%22http%3A//openstreetmap.org%5C%22%5Cu003eOpenStreetMap%5Cu003c/a%5Cu003e%2C%20under%20%5Cu003ca%20href%3D%5C%22http%3A//www.openstreetmap.org/copyright%5C%22%5Cu003eODbL%5Cu003c/a%5Cu003e.%22%2C%20%22detectRetina%22%3A%20false%2C%20%22maxNativeZoom%22%3A%2024%2C%20%22maxZoom%22%3A%2024%2C%20%22minZoom%22%3A%200%2C%20%22noWrap%22%3A%20false%2C%20%22opacity%22%3A%201%2C%20%22subdomains%22%3A%20%22abc%22%2C%20%22tms%22%3A%20false%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_fa1ccb6a6a204d869fcc466277b52956%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.fullscreen%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22forceSeparateButton%22%3A%20false%2C%20%22position%22%3A%20%22topleft%22%2C%20%22title%22%3A%20%22Full%20Screen%22%2C%20%22titleCancel%22%3A%20%22Exit%20Full%20Screen%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_fa1ccb6a6a204d869fcc466277b52956%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20options%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20%22topleft%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20draw%3A%20%7B%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20edit%3A%20%7B%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20FeatureGroup%20is%20to%20store%20editable%20layers.%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20drawnItems%20%3D%20new%20L.featureGroup%28%29.addTo%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20options.edit.featureGroup%20%3D%20drawnItems%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20draw_control_76b3fa4691334a8dbaf2c429c29d1d90%20%3D%20new%20L.Control.Draw%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20options%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28%20map_fa1ccb6a6a204d869fcc466277b52956%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956.on%28L.Draw.Event.CREATED%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20layer%20%3D%20e.layer%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%20%3D%20e.layerType%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20coords%20%3D%20JSON.stringify%28layer.toGeoJSON%28%29%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer.on%28%27click%27%2C%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alert%28coords%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20console.log%28coords%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawnItems.addLayer%28layer%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956.on%28%27draw%3Acreated%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawnItems.addLayer%28e.layer%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20measure_control_7db0b06b607b41728ef2314464a555bd%20%3D%20new%20L.Control.Measure%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22position%22%3A%20%22bottomleft%22%2C%20%22primaryAreaUnit%22%3A%20%22sqmeters%22%2C%20%22primaryLengthUnit%22%3A%20%22meters%22%2C%20%22secondaryAreaUnit%22%3A%20%22acres%22%2C%20%22secondaryLengthUnit%22%3A%20%22miles%22%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956.addControl%28measure_control_7db0b06b607b41728ef2314464a555bd%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20L.Control.geocoder%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22collapsed%22%3A%20true%2C%20%22defaultMarkGeocode%22%3A%20true%2C%20%22position%22%3A%20%22topleft%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.on%28%27markgeocode%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956.setView%28e.geocode.center%2C%2011%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29.addTo%28map_fa1ccb6a6a204d869fcc466277b52956%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20map_fa1ccb6a6a204d869fcc466277b52956.fitBounds%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B%5B40%2C%20-100%5D%2C%20%5B40%2C%20-100%5D%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22maxZoom%22%3A%204%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20layer_control_6328598843ee41e8b704ff3e8a739be4%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20base_layers%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22openstreetmap%22%20%3A%20tile_layer_585ea40d172b4859b487d83b3811de59%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20overlays%20%3A%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.layers%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer_control_6328598843ee41e8b704ff3e8a739be4.base_layers%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer_control_6328598843ee41e8b704ff3e8a739be4.overlays%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22autoZIndex%22%3A%20true%2C%20%22collapsed%22%3A%20true%2C%20%22position%22%3A%20%22topright%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_fa1ccb6a6a204d869fcc466277b52956%29%3B%0A%20%20%20%20%20%20%20%20%0A%3C/script%3E onload="this.contentDocument.open();this.contentDocument.write(    decodeURIComponent(this.getAttribute('data-html')));this.contentDocument.close();" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe src="about:blank" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" data-html=%3C%21DOCTYPE%20html%3E%0A%3Chead%3E%20%20%20%20%0A%20%20%20%20%3Cmeta%20http-equiv%3D%22content-type%22%20content%3D%22text/html%3B%20charset%3DUTF-8%22%20/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20L_NO_TOUCH%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L_DISABLE_3D%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%0A%20%20%20%20%3Cstyle%3Ehtml%2C%20body%20%7Bwidth%3A%20100%25%3Bheight%3A%20100%25%3Bmargin%3A%200%3Bpadding%3A%200%3B%7D%3C/style%3E%0A%20%20%20%20%3Cstyle%3E%23map%20%7Bposition%3Aabsolute%3Btop%3A0%3Bbottom%3A0%3Bright%3A0%3Bleft%3A0%3B%7D%3C/style%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//code.jquery.com/jquery-1.12.4.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/npm/leaflet%401.6.0/dist/leaflet.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css%22/%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css%22/%3E%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initial-scale%3D1.0%2C%20maximum-scale%3D1.0%2C%20user-scalable%3Dno%22%20/%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23map_2f96075356b6499cabc82755f7d508ca%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20width%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20100.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20left%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20top%3A%200.0%25%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/style%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//cdn.jsdelivr.net/gh/ljagis/leaflet-measure%402.1.7/dist/leaflet-measure.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdn.jsdelivr.net/gh/ljagis/leaflet-measure%402.1.7/dist/leaflet-measure.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js%22%3E%3C/script%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css%22/%3E%0A%3C/head%3E%0A%3Cbody%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22folium-map%22%20id%3D%22map_2f96075356b6499cabc82755f7d508ca%22%20%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%3C/body%3E%0A%3Cscript%3E%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20map_2f96075356b6499cabc82755f7d508ca%20%3D%20L.map%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22map_2f96075356b6499cabc82755f7d508ca%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20center%3A%20%5B40.0%2C%20-100.0%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20crs%3A%20L.CRS.EPSG3857%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoom%3A%204%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20zoomControl%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preferCanvas%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawExport%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layersControl%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.scale%28%29.addTo%28map_2f96075356b6499cabc82755f7d508ca%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20tile_layer_04aa99be76dd4e9fb639289ccd5ec01e%20%3D%20L.tileLayer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22https%3A//%7Bs%7D.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22attribution%22%3A%20%22Data%20by%20%5Cu0026copy%3B%20%5Cu003ca%20href%3D%5C%22http%3A//openstreetmap.org%5C%22%5Cu003eOpenStreetMap%5Cu003c/a%5Cu003e%2C%20under%20%5Cu003ca%20href%3D%5C%22http%3A//www.openstreetmap.org/copyright%5C%22%5Cu003eODbL%5Cu003c/a%5Cu003e.%22%2C%20%22detectRetina%22%3A%20false%2C%20%22maxNativeZoom%22%3A%2024%2C%20%22maxZoom%22%3A%2024%2C%20%22minZoom%22%3A%200%2C%20%22noWrap%22%3A%20false%2C%20%22opacity%22%3A%201%2C%20%22subdomains%22%3A%20%22abc%22%2C%20%22tms%22%3A%20false%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_2f96075356b6499cabc82755f7d508ca%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.fullscreen%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22forceSeparateButton%22%3A%20false%2C%20%22position%22%3A%20%22topleft%22%2C%20%22title%22%3A%20%22Full%20Screen%22%2C%20%22titleCancel%22%3A%20%22Exit%20Full%20Screen%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_2f96075356b6499cabc82755f7d508ca%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20options%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20%22topleft%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20draw%3A%20%7B%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20edit%3A%20%7B%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20//%20FeatureGroup%20is%20to%20store%20editable%20layers.%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20drawnItems%20%3D%20new%20L.featureGroup%28%29.addTo%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20options.edit.featureGroup%20%3D%20drawnItems%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20draw_control_446bb389ba784f7d95a4c6139c08ac75%20%3D%20new%20L.Control.Draw%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20options%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28%20map_2f96075356b6499cabc82755f7d508ca%20%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca.on%28L.Draw.Event.CREATED%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20layer%20%3D%20e.layer%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%20%3D%20e.layerType%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20coords%20%3D%20JSON.stringify%28layer.toGeoJSON%28%29%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer.on%28%27click%27%2C%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20alert%28coords%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20console.log%28coords%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawnItems.addLayer%28layer%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca.on%28%27draw%3Acreated%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20drawnItems.addLayer%28e.layer%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20measure_control_41811ee7304a46ca8041cababdb5f554%20%3D%20new%20L.Control.Measure%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22position%22%3A%20%22bottomleft%22%2C%20%22primaryAreaUnit%22%3A%20%22sqmeters%22%2C%20%22primaryLengthUnit%22%3A%20%22meters%22%2C%20%22secondaryAreaUnit%22%3A%20%22acres%22%2C%20%22secondaryLengthUnit%22%3A%20%22miles%22%7D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca.addControl%28measure_control_41811ee7304a46ca8041cababdb5f554%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20L.Control.geocoder%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22collapsed%22%3A%20true%2C%20%22defaultMarkGeocode%22%3A%20true%2C%20%22position%22%3A%20%22topleft%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.on%28%27markgeocode%27%2C%20function%28e%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca.setView%28e.geocode.center%2C%2011%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%29.addTo%28map_2f96075356b6499cabc82755f7d508ca%29%3B%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20map_2f96075356b6499cabc82755f7d508ca.fitBounds%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B%5B40%2C%20-100%5D%2C%20%5B40%2C%20-100%5D%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22maxZoom%22%3A%204%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20layer_control_61da0b6e7bea4385acd1cdb0826c601f%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20base_layers%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22openstreetmap%22%20%3A%20tile_layer_04aa99be76dd4e9fb639289ccd5ec01e%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20overlays%20%3A%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20L.control.layers%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer_control_61da0b6e7bea4385acd1cdb0826c601f.base_layers%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20layer_control_61da0b6e7bea4385acd1cdb0826c601f.overlays%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%22autoZIndex%22%3A%20true%2C%20%22collapsed%22%3A%20true%2C%20%22position%22%3A%20%22topright%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%29.addTo%28map_2f96075356b6499cabc82755f7d508ca%29%3B%0A%20%20%20%20%20%20%20%20%0A%3C/script%3E onload="this.contentDocument.open();this.contentDocument.write(    decodeURIComponent(this.getAttribute('data-html')));this.contentDocument.close();" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 </div>
 
 </div>
@@ -3910,12 +3943,12 @@ m</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3929,7 +3962,7 @@ m</div>
 <span class="k">if</span> <span class="n">region</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">region</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">115.9689</span><span class="p">,</span> <span class="mf">35.9758</span><span class="p">,</span> <span class="o">-</span><span class="mf">115.3619</span><span class="p">,</span> <span class="mf">36.4721</span><span class="p">]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt">region = m.user_roi_bounds()
+<div id="cell-15" class="clipboard-copy-txt">region = m.user_roi_bounds()
 if region is None:
     region = [-115.9689, 35.9758, -115.3619, 36.4721]</div>
     
@@ -3969,12 +4002,12 @@ if region is None:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3986,7 +4019,7 @@ if region is None:
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;LAZ&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">)[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">TNM.find_details(q='LAZ', bbox=region)['total']</div>
+<div id="cell-16" class="clipboard-copy-txt">TNM.find_details(q='LAZ', bbox=region)['total']</div>
     
         </div>
     </div>
@@ -4004,7 +4037,7 @@ if region is None:
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -4037,75 +4070,6 @@ if region is None:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;01-01-2010&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s2">&quot;NED&quot;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
-</pre></div>
-<div id="cell-16" class="clipboard-copy-txt">bool(TNM.find_details(start="01-01-2010", q="NED", bbox=region))</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
-</pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
@@ -4121,9 +4085,9 @@ if region is None:
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-12-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s1">&#39;NED&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;01-01-2010&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s2">&quot;NED&quot;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
 </pre></div>
-<div id="cell-17" class="clipboard-copy-txt">bool(TNM.find_details(start='2021-12-01', end='2020-01-01', q='NED', bbox=region))</div>
+<div id="cell-17" class="clipboard-copy-txt">bool(TNM.find_details(start="01-01-2010", q="NED", bbox=region))</div>
     
         </div>
     </div>
@@ -4190,9 +4154,9 @@ if region is None:
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-12-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2022-01-01&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s1">&#39;NED&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-12-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s1">&#39;NED&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
 </pre></div>
-<div id="cell-18" class="clipboard-copy-txt">bool(TNM.find_details(start='2021-12-01', end='2022-01-01', q='NED', bbox=region))</div>
+<div id="cell-18" class="clipboard-copy-txt">bool(TNM.find_details(start='2021-12-01', end='2020-01-01', q='NED', bbox=region))</div>
     
         </div>
     </div>
@@ -4259,6 +4223,75 @@ if region is None:
                 </div>
             </clipboard-copy>
         </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2021-12-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2022-01-01&#39;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="s1">&#39;NED&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">region</span><span class="p">))</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt">bool(TNM.find_details(start='2021-12-01', end='2022-01-01', q='NED', bbox=region))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">bool</span><span class="p">(</span>
     <span class="n">TNM</span><span class="o">.</span><span class="n">find_details</span><span class="p">(</span>
         <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2020-12-01&#39;</span><span class="p">,</span>
@@ -4269,7 +4302,7 @@ if region is None:
     <span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-19" class="clipboard-copy-txt">bool(
+<div id="cell-20" class="clipboard-copy-txt">bool(
     TNM.find_details(
         start='2020-12-01',
         end='2022-01-01',
@@ -4295,7 +4328,7 @@ if region is None:
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -4328,12 +4361,12 @@ if region is None:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-20">
+            <clipboard-copy for="cell-21">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4345,7 +4378,7 @@ if region is None:
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">TNM</span><span class="o">.</span><span class="n">download_tiles</span><span class="p">)</span>
 </pre></div>
-<div id="cell-20" class="clipboard-copy-txt">help(TNM.download_tiles)</div>
+<div id="cell-21" class="clipboard-copy-txt">help(TNM.download_tiles)</div>
     
         </div>
     </div>
@@ -4400,12 +4433,12 @@ download_tiles(region=None, out_dir=None, download_args={}, geopandas_args={}, A
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-21">
+            <clipboard-copy for="cell-22">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4424,7 +4457,7 @@ download_tiles(region=None, out_dir=None, download_args={}, geopandas_args={}, A
 
 <span class="n">TNM</span><span class="o">.</span><span class="n">download_tiles</span><span class="p">(</span><span class="n">API</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt">params = {
+<div id="cell-22" class="clipboard-copy-txt">params = {
     'q': 'National Elevation Dataset (NED) 1/3 arc-second',
     'polyCode': '01010002',
     'polyType': 'huc8',
@@ -4458,12 +4491,12 @@ TNM.download_tiles(API=params)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-22">
+            <clipboard-copy for="cell-23">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4482,7 +4515,7 @@ TNM.download_tiles(API=params)</div>
 
 <span class="n">leafmap</span><span class="o">.</span><span class="n">download_tnm</span><span class="p">(</span><span class="n">API</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
-<div id="cell-22" class="clipboard-copy-txt">params = {
+<div id="cell-23" class="clipboard-copy-txt">params = {
     'q': 'National Elevation Dataset (NED) 1/3 arc-second',
     'polyCode': '01010002',
     'polyType': 'huc8',
@@ -4504,12 +4537,12 @@ leafmap.download_tnm(API=params)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-23">
+            <clipboard-copy for="cell-24">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4525,7 +4558,7 @@ leafmap.download_tnm(API=params)</div>
     <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">API</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="s1">&#39;NED&#39;</span><span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
-<div id="cell-23" class="clipboard-copy-txt">region = [-115.9689, 35.9758, -115.3619, 36.4721]
+<div id="cell-24" class="clipboard-copy-txt">region = [-115.9689, 35.9758, -115.3619, 36.4721]
 
 leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
     region=region, return_url=True, API={'q': 'NED'}
@@ -4547,7 +4580,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -4580,12 +4613,12 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-24">
+            <clipboard-copy for="cell-25">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4597,7 +4630,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">find_tiles</span><span class="p">(</span><span class="n">API</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
-<div id="cell-24" class="clipboard-copy-txt">TNM.find_tiles(API=params)</div>
+<div id="cell-25" class="clipboard-copy-txt">TNM.find_tiles(API=params)</div>
     
         </div>
     </div>
@@ -4615,7 +4648,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -4672,12 +4705,12 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-25">
+            <clipboard-copy for="cell-26">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4689,7 +4722,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">TNM</span><span class="o">.</span><span class="n">datasets_full</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
-<div id="cell-25" class="clipboard-copy-txt">TNM.datasets_full[0]</div>
+<div id="cell-26" class="clipboard-copy-txt">TNM.datasets_full[0]</div>
     
         </div>
     </div>
@@ -4707,7 +4740,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -4781,12 +4814,12 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-26">
+            <clipboard-copy for="cell-27">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -4798,7 +4831,7 @@ leafmap.download_ned(region=region, return_url=True) == leafmap.download_tnm(
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">TNM</span><span class="p">)</span>
 </pre></div>
-<div id="cell-26" class="clipboard-copy-txt">help(TNM)</div>
+<div id="cell-27" class="clipboard-copy-txt">help(TNM)</div>
     
         </div>
     </div>
@@ -4962,7 +4995,7 @@ class The_national_map_USGS(builtins.object)
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-11-20T21:43:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-11-25T05:55:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-25</span>
       
         <br>
         Created:

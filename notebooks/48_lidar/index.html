@@ -2698,7 +2698,8 @@ Licensed under the Apache License, Version 2.0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://githubtocolab.com/giswqs/leafmap/blob/master/examples/notebooks/48_lidar.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="image"></a>
+<p><a href="https://demo.leafmap.org/lab/index.html?path=notebooks/48_lidar.ipynb"><img src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" alt="image"></a>
+<a href="https://githubtocolab.com/giswqs/leafmap/blob/master/examples/notebooks/48_lidar.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="image"></a>
 <a href="https://gishub.org/leafmap-binder"><img src="https://mybinder.org/badge_logo.svg" alt="image"></a></p>
 <p><strong>Visualizing LiDAR data in 3D with only one line of code</strong></p>
 <p>Uncomment the following line to install <a href="https://leafmap.org">leafmap</a> if needed.</p>
@@ -2727,9 +2728,9 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># !pip install leafmap[lidar] open3d</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># !pip install leafmap</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt"># !pip install leafmap[lidar] open3d</div>
+<div id="cell-1" class="clipboard-copy-txt"># !pip install leafmap</div>
     
         </div>
     </div>
@@ -2759,10 +2760,42 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># !pip install leafmap[lidar] open3d</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt"># !pip install leafmap[lidar] open3d</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">leafmap</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">import os
+<div id="cell-3" class="clipboard-copy-txt">import os
 import leafmap</div>
     
         </div>
@@ -2790,12 +2823,12 @@ import leafmap</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2810,7 +2843,7 @@ import leafmap</div>
 <span class="p">)</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;madison.las&#39;</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">url = (
+<div id="cell-4" class="clipboard-copy-txt">url = (
     'https://github.com/giswqs/data/raw/main/lidar/madison.zip'
 )
 filename = 'madison.las'</div>
@@ -2828,12 +2861,12 @@ filename = 'madison.las'</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2846,7 +2879,7 @@ filename = 'madison.las'</div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">leafmap</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;madison.zip&#39;</span><span class="p">,</span> <span class="n">unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">if not os.path.exists(filename):
+<div id="cell-5" class="clipboard-copy-txt">if not os.path.exists(filename):
     leafmap.download_file(url, 'madison.zip', unzip=True)</div>
     
         </div>
@@ -2872,7 +2905,7 @@ filename = 'madison.las'</div>
 <pre>Downloading...
 From: https://github.com/giswqs/data/raw/main/lidar/madison.zip
 To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
-100%|██████████| 54.7M/54.7M [00:00&lt;00:00, 260MB/s]
+100%|██████████| 54.7M/54.7M [00:00&lt;00:00, 318MB/s]
 </pre>
 </div>
 </div>
@@ -2912,12 +2945,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2929,7 +2962,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">read_lidar</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">las = leafmap.read_lidar(filename)</div>
+<div id="cell-6" class="clipboard-copy-txt">las = leafmap.read_lidar(filename)</div>
     
         </div>
     </div>
@@ -2956,12 +2989,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2973,7 +3006,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">header</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">las.header</div>
+<div id="cell-7" class="clipboard-copy-txt">las.header</div>
     
         </div>
     </div>
@@ -2991,7 +3024,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -3025,12 +3058,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3042,7 +3075,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">point_count</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">las.header.point_count</div>
+<div id="cell-8" class="clipboard-copy-txt">las.header.point_count</div>
     
         </div>
     </div>
@@ -3060,7 +3093,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -3094,12 +3127,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3111,7 +3144,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">las</span><span class="o">.</span><span class="n">point_format</span><span class="o">.</span><span class="n">dimension_names</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">list(las.point_format.dimension_names)</div>
+<div id="cell-9" class="clipboard-copy-txt">list(las.point_format.dimension_names)</div>
     
         </div>
     </div>
@@ -3129,7 +3162,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -3178,64 +3211,6 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">X</span>
-</pre></div>
-<div id="cell-9" class="clipboard-copy-txt">las.X</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([5324343, 5324296, 5323993, ..., 5784049, 5784359, 5784667],
-      dtype=int32)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
@@ -3251,9 +3226,9 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">Y</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">X</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">las.Y</div>
+<div id="cell-10" class="clipboard-copy-txt">las.X</div>
     
         </div>
     </div>
@@ -3277,7 +3252,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([8035264, 8035347, 8035296, ..., 7550110, 7550066, 7550026],
+<pre>array([5324343, 5324296, 5323993, ..., 5784049, 5784359, 5784667],
       dtype=int32)</pre>
 </div>
 
@@ -3309,9 +3284,9 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">Z</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">Y</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">las.Z</div>
+<div id="cell-11" class="clipboard-copy-txt">las.Y</div>
     
         </div>
     </div>
@@ -3335,7 +3310,8 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([36696, 34835, 34826, ..., 36839, 36858, 36842], dtype=int32)</pre>
+<pre>array([8035264, 8035347, 8035296, ..., 7550110, 7550066, 7550026],
+      dtype=int32)</pre>
 </div>
 
 </div>
@@ -3366,9 +3342,9 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">intensity</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">Z</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">las.intensity</div>
+<div id="cell-12" class="clipboard-copy-txt">las.Z</div>
     
         </div>
     </div>
@@ -3387,6 +3363,63 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([36696, 34835, 34826, ..., 36839, 36858, 36842], dtype=int32)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">las</span><span class="o">.</span><span class="n">intensity</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">las.intensity</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -3420,12 +3453,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3437,7 +3470,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># leafmap.view_lidar(filename, cmap=&#39;terrain&#39;, backend=&#39;pyvista&#39;)</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt"># leafmap.view_lidar(filename, cmap='terrain', backend='pyvista')</div>
+<div id="cell-14" class="clipboard-copy-txt"># leafmap.view_lidar(filename, cmap='terrain', backend='pyvista')</div>
     
         </div>
     </div>
@@ -3476,12 +3509,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3493,7 +3526,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># leafmap.view_lidar(filename, backend=&#39;ipygany&#39;, background=&#39;white&#39;)</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt"># leafmap.view_lidar(filename, backend='ipygany', background='white')</div>
+<div id="cell-15" class="clipboard-copy-txt"># leafmap.view_lidar(filename, backend='ipygany', background='white')</div>
     
         </div>
     </div>
@@ -3532,12 +3565,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-16">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3549,7 +3582,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># leafmap.view_lidar(filename, cmap=&#39;terrain&#39;, backend=&#39;panel&#39;, background=&#39;white&#39;)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt"># leafmap.view_lidar(filename, cmap='terrain', backend='panel', background='white')</div>
+<div id="cell-16" class="clipboard-copy-txt"># leafmap.view_lidar(filename, cmap='terrain', backend='panel', background='white')</div>
     
         </div>
     </div>
@@ -3588,12 +3621,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-17">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -3605,7 +3638,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># leafmap.view_lidar(filename, backend=&#39;open3d&#39;)</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt"># leafmap.view_lidar(filename, backend='open3d')</div>
+<div id="cell-17" class="clipboard-copy-txt"># leafmap.view_lidar(filename, backend='open3d')</div>
     
         </div>
     </div>
@@ -3636,7 +3669,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/madison.zip
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-11-24T04:55:01+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-11-25T05:55:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-25</span>
       
         <br>
         Created:

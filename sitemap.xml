@@ -426,6 +426,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leafmap.org/notebooks/zz_notebook_template/</loc>
+         <lastmod>2022-11-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leafmap.org/workshops/FOSS4G_2021/</loc>
          <lastmod>2022-11-25</lastmod>
          <changefreq>daily</changefreq>
