@@ -4265,29 +4265,29 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="sd">            If you want to add multiple legends to the map, you need to set the `draggable` argument to False.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">        title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;. Defaults to &quot;Legend&quot;.</span>
-<span class="sd">        colors (list, optional): A list of legend colors. Defaults to None.</span>
-<span class="sd">        labels (list, optional): A list of legend labels. Defaults to None.</span>
-<span class="sd">        legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.</span>
-<span class="sd">            If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
-<span class="sd">        builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.</span>
-<span class="sd">        opacity (float, optional): The opacity of the legend. Defaults to 1.0.</span>
-<span class="sd">        position (str, optional): The position of the legend, can be one of the following:</span>
-<span class="sd">            &quot;topleft&quot;, &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
-<span class="sd">        draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</span>
-<span class="sd">        style: Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</span>
-<span class="sd">            border, background-color, border-radius, padding, font-size, etc. The default style is:</span>
-<span class="sd">            style = {</span>
-<span class="sd">                &#39;position&#39;: &#39;fixed&#39;,</span>
-<span class="sd">                &#39;z-index&#39;: &#39;9999&#39;,</span>
-<span class="sd">                &#39;border&#39;: &#39;2px solid grey&#39;,</span>
-<span class="sd">                &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.8)&#39;,</span>
-<span class="sd">                &#39;border-radius&#39;: &#39;5px&#39;,</span>
-<span class="sd">                &#39;padding&#39;: &#39;10px&#39;,</span>
-<span class="sd">                &#39;font-size&#39;: &#39;14px&#39;,</span>
-<span class="sd">                &#39;bottom&#39;: &#39;20px&#39;,</span>
-<span class="sd">                &#39;right&#39;: &#39;5px&#39;</span>
-<span class="sd">            }</span>
+<span class="sd">            title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;. Defaults to &quot;Legend&quot;.</span>
+<span class="sd">            colors (list, optional): A list of legend colors. Defaults to None.</span>
+<span class="sd">            labels (list, optional): A list of legend labels. Defaults to None.</span>
+<span class="sd">            legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.</span>
+<span class="sd">                If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
+<span class="sd">            builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.</span>
+<span class="sd">            opacity (float, optional): The opacity of the legend. Defaults to 1.0.</span>
+<span class="sd">            position (str, optional): The position of the legend, can be one of the following:</span>
+<span class="sd">                &quot;topleft&quot;, &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">            draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</span>
+<span class="sd">            style: Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</span>
+<span class="sd">                border, background-color, border-radius, padding, font-size, etc. The default style is:</span>
+<span class="sd">                style = {</span>
+<span class="sd">                    &#39;position&#39;: &#39;fixed&#39;,</span>
+<span class="sd">                    &#39;z-index&#39;: &#39;9999&#39;,</span>
+<span class="sd">                    &#39;border&#39;: &#39;2px solid grey&#39;,</span>
+<span class="sd">                    &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.8)&#39;,</span>
+<span class="sd">                    &#39;border-radius&#39;: &#39;5px&#39;,</span>
+<span class="sd">                    &#39;padding&#39;: &#39;10px&#39;,</span>
+<span class="sd">                    &#39;font-size&#39;: &#39;14px&#39;,</span>
+<span class="sd">                    &#39;bottom&#39;: &#39;20px&#39;,</span>
+<span class="sd">                    &#39;right&#39;: &#39;5px&#39;</span>
+<span class="sd">                }</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">create_legend</span><span class="p">(</span>
@@ -8052,19 +8052,73 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
 
       <p>Adds a customized legend to the map. Reference: https://bit.ly/3oV6vnH.
     If you want to add multiple legends to the map, you need to set the <code>draggable</code> argument to False.</p>
-      <p>title (str, optional): Title of the legend. Defaults to 'Legend'. Defaults to "Legend".
-colors (list, optional): A list of legend colors. Defaults to None.
-labels (list, optional): A list of legend labels. Defaults to None.
-legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.
-    If provided, legend_keys and legend_colors will be ignored. Defaults to None.
-builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.
-opacity (float, optional): The opacity of the legend. Defaults to 1.0.
-position (str, optional): The position of the legend, can be one of the following:
-    "topleft", "topright", "bottomleft", "bottomright". Defaults to "bottomright".
-draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</p>
-<div class="admonition style">
-<p class="admonition-title">Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</p>
-<p>border, background-color, border-radius, padding, font-size, etc. The default style is:
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>str</code></td>
+        <td><p>Title of the legend. Defaults to 'Legend'. Defaults to "Legend".</p></td>
+        <td><code>&#39;Legend&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>colors</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of legend colors. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>labels</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of legend labels. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>legend_dict</code></td>
+        <td><code>dict</code></td>
+        <td><p>A dictionary containing legend items as keys and color as values.
+If provided, legend_keys and legend_colors will be ignored. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>builtin_legend</code></td>
+        <td><code>str</code></td>
+        <td><p>Name of the builtin legend to add to the map. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>opacity</code></td>
+        <td><code>float</code></td>
+        <td><p>The opacity of the legend. Defaults to 1.0.</p></td>
+        <td><code>1.0</code></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the legend, can be one of the following:
+"topleft", "topright", "bottomleft", "bottomright". Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>draggable</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, the legend can be dragged to a new position. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>style</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to style the legend, such as position, bottom, right, z-index,
+border, background-color, border-radius, padding, font-size, etc. The default style is:
 style = {
     'position': 'fixed',
     'z-index': '9999',
@@ -8075,9 +8129,11 @@ style = {
     'font-size': '14px',
     'bottom': '20px',
     'right': '5px'
-}</p>
-</div>
-
+}</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_legend</span><span class="p">(</span>
@@ -8096,29 +8152,29 @@ style = {
 <span class="sd">        If you want to add multiple legends to the map, you need to set the `draggable` argument to False.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">    title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;. Defaults to &quot;Legend&quot;.</span>
-<span class="sd">    colors (list, optional): A list of legend colors. Defaults to None.</span>
-<span class="sd">    labels (list, optional): A list of legend labels. Defaults to None.</span>
-<span class="sd">    legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.</span>
-<span class="sd">        If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
-<span class="sd">    builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.</span>
-<span class="sd">    opacity (float, optional): The opacity of the legend. Defaults to 1.0.</span>
-<span class="sd">    position (str, optional): The position of the legend, can be one of the following:</span>
-<span class="sd">        &quot;topleft&quot;, &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
-<span class="sd">    draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</span>
-<span class="sd">    style: Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</span>
-<span class="sd">        border, background-color, border-radius, padding, font-size, etc. The default style is:</span>
-<span class="sd">        style = {</span>
-<span class="sd">            &#39;position&#39;: &#39;fixed&#39;,</span>
-<span class="sd">            &#39;z-index&#39;: &#39;9999&#39;,</span>
-<span class="sd">            &#39;border&#39;: &#39;2px solid grey&#39;,</span>
-<span class="sd">            &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.8)&#39;,</span>
-<span class="sd">            &#39;border-radius&#39;: &#39;5px&#39;,</span>
-<span class="sd">            &#39;padding&#39;: &#39;10px&#39;,</span>
-<span class="sd">            &#39;font-size&#39;: &#39;14px&#39;,</span>
-<span class="sd">            &#39;bottom&#39;: &#39;20px&#39;,</span>
-<span class="sd">            &#39;right&#39;: &#39;5px&#39;</span>
-<span class="sd">        }</span>
+<span class="sd">        title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;. Defaults to &quot;Legend&quot;.</span>
+<span class="sd">        colors (list, optional): A list of legend colors. Defaults to None.</span>
+<span class="sd">        labels (list, optional): A list of legend labels. Defaults to None.</span>
+<span class="sd">        legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.</span>
+<span class="sd">            If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
+<span class="sd">        builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.</span>
+<span class="sd">        opacity (float, optional): The opacity of the legend. Defaults to 1.0.</span>
+<span class="sd">        position (str, optional): The position of the legend, can be one of the following:</span>
+<span class="sd">            &quot;topleft&quot;, &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">        draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</span>
+<span class="sd">        style: Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</span>
+<span class="sd">            border, background-color, border-radius, padding, font-size, etc. The default style is:</span>
+<span class="sd">            style = {</span>
+<span class="sd">                &#39;position&#39;: &#39;fixed&#39;,</span>
+<span class="sd">                &#39;z-index&#39;: &#39;9999&#39;,</span>
+<span class="sd">                &#39;border&#39;: &#39;2px solid grey&#39;,</span>
+<span class="sd">                &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.8)&#39;,</span>
+<span class="sd">                &#39;border-radius&#39;: &#39;5px&#39;,</span>
+<span class="sd">                &#39;padding&#39;: &#39;10px&#39;,</span>
+<span class="sd">                &#39;font-size&#39;: &#39;14px&#39;,</span>
+<span class="sd">                &#39;bottom&#39;: &#39;20px&#39;,</span>
+<span class="sd">                &#39;right&#39;: &#39;5px&#39;</span>
+<span class="sd">            }</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">create_legend</span><span class="p">(</span>
