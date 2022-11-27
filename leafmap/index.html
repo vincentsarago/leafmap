@@ -712,6 +712,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_html" class="md-nav__link">
+    add_html()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_image" class="md-nav__link">
+    add_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_kml" class="md-nav__link">
     add_kml()
   </a>
@@ -931,6 +945,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_velocity" class="md-nav__link">
     add_velocity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_widget" class="md-nav__link">
+    add_widget()
   </a>
   
 </li>
@@ -2325,6 +2346,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_html" class="md-nav__link">
+    add_html()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_image" class="md-nav__link">
+    add_image()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_kml" class="md-nav__link">
     add_kml()
   </a>
@@ -2544,6 +2579,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_velocity" class="md-nav__link">
     add_velocity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_widget" class="md-nav__link">
+    add_widget()
   </a>
   
 </li>
@@ -3984,6 +4026,14 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">right_layer</span><span class="o">=</span><span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span>
         <span class="n">left_args</span><span class="o">=</span><span class="p">{},</span>
         <span class="n">right_args</span><span class="o">=</span><span class="p">{},</span>
+        <span class="n">zoom_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">fullscreen_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">add_close_button</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">left_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">right_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">left_position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span>
+        <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+        <span class="n">widget_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds split map.</span>
 
@@ -4012,6 +4062,26 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
+
+            <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controls</span>
+            <span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clear_controls</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">zoom_control</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ZoomControl</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">fullscreen_control</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">FullScreenControl</span><span class="p">())</span>
+
+            <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">left_name</span> <span class="o">=</span> <span class="n">left_label</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">left_name</span> <span class="o">=</span> <span class="s2">&quot;Left Layer&quot;</span>
+
+            <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">right_name</span> <span class="o">=</span> <span class="n">right_label</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">right_name</span> <span class="o">=</span> <span class="s2">&quot;Right Layer&quot;</span>
+
             <span class="k">if</span> <span class="n">left_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
                 <span class="n">left_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">left_layer</span><span class="p">]</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -4021,7 +4091,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                     <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span>
                     <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-                        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Left Layer&quot;</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">left_name</span><span class="p">,</span>
                         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                     <span class="p">)</span>
                 <span class="k">elif</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.geojson&quot;</span><span class="p">):</span>
@@ -4048,7 +4118,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                         <span class="n">url</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span>
-                        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Left Layer&quot;</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">left_name</span><span class="p">,</span>
                         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                         <span class="o">**</span><span class="n">left_args</span><span class="p">,</span>
                     <span class="p">)</span>
@@ -4073,7 +4143,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                     <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span>
                     <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                         <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-                        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Right Layer&quot;</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">right_name</span><span class="p">,</span>
                         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                     <span class="p">)</span>
                 <span class="k">elif</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
@@ -4103,7 +4173,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                         <span class="n">url</span><span class="o">=</span><span class="n">right_layer</span><span class="p">,</span>
-                        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Right Layer&quot;</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">right_name</span><span class="p">,</span>
                         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                         <span class="o">**</span><span class="n">right_args</span><span class="p">,</span>
                     <span class="p">)</span>
@@ -4119,6 +4189,27 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="n">left_layer</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="n">right_layer</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+                <span class="n">left_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">left_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
+
+                <span class="n">left_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+                    <span class="n">widget</span><span class="o">=</span><span class="n">left_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">left_position</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+                <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">right_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
+                <span class="n">right_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+                    <span class="n">widget</span><span class="o">=</span><span class="n">right_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">right_position</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">right_control</span><span class="p">)</span>
+
             <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
@@ -5061,9 +5152,9 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
                         <span class="n">output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
                         <span class="n">obj</span> <span class="o">=</span> <span class="n">pyodide</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">open_url</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span>
-                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
                             <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
-                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
                             <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">in_geojson</span> <span class="o">=</span> <span class="n">github_raw_url</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span>
@@ -6501,6 +6592,69 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">return</span> <span class="n">geometry_bounds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_roi</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="n">decimals</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            content (str | ipywidgets.Widget | object): The widget to add.</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">            **kwargs: Other keyword arguments for ipywidgets.HTML().</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">allowed_positions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">position</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_positions</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;position must be one of </span><span class="si">{</span><span class="n">allowed_positions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;layout&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;layout&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="n">control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
+                    <span class="n">display</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+                <span class="n">control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">output</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error adding widget: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image (str | ipywidgets.Image): The image to add.</span>
+<span class="sd">            position (str, optional): The position of the image, can be one of &quot;topleft&quot;,</span>
+<span class="sd">                &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">image</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Invalid image&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            html (str): The HTML to add.</span>
+<span class="sd">            position (str, optional): The position of the HTML, can be one of &quot;topleft&quot;,</span>
+<span class="sd">                &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
 
@@ -8020,9 +8174,9 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
                     <span class="n">output</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
                     <span class="n">obj</span> <span class="o">=</span> <span class="n">pyodide</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">open_url</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span>
-                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
                         <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
-                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
                         <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">in_geojson</span> <span class="o">=</span> <span class="n">github_raw_url</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span>
@@ -8299,6 +8453,137 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_html" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_html" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add HTML to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>html</code></td>
+        <td><code>str</code></td>
+        <td><p>The HTML to add.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the HTML, can be one of "topleft",
+"topright", "bottomleft", "bottomright". Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        html (str): The HTML to add.</span>
+<span class="sd">        position (str, optional): The position of the HTML, can be one of &quot;topleft&quot;,</span>
+<span class="sd">            &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_image" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_image" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add an image to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>image</code></td>
+        <td><code>str | ipywidgets.Image</code></td>
+        <td><p>The image to add.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the image, can be one of "topleft",
+"topright", "bottomleft", "bottomright". Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image (str | ipywidgets.Image): The image to add.</span>
+<span class="sd">        position (str, optional): The position of the image, can be one of &quot;topleft&quot;,</span>
+<span class="sd">            &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Invalid image&quot;</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -12771,6 +13056,90 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 
+<h3 id="leafmap.leafmap.Map.add_widget" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_widget" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add a widget (e.g., text, HTML, figure) to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str | ipywidgets.Widget | object</code></td>
+        <td><p>The widget to add.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Other keyword arguments for ipywidgets.HTML().</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str | ipywidgets.Widget | object): The widget to add.</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">        **kwargs: Other keyword arguments for ipywidgets.HTML().</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">allowed_positions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">position</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_positions</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;position must be one of </span><span class="si">{</span><span class="n">allowed_positions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;layout&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;layout&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">output</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error adding widget: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h3 id="leafmap.leafmap.Map.add_wms_layer" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">add_wms_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;image/png&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -13974,7 +14343,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 <h3 id="leafmap.leafmap.Map.split_map" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">split_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_layer</span><span class="o">=</span><span class="s1">&#39;TERRAIN&#39;</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="s1">&#39;OpenTopoMap&#39;</span><span class="p">,</span> <span class="n">left_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">right_args</span><span class="o">=</span><span class="p">{})</span></code>
+<code class="highlight language-python"><span class="n">split_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left_layer</span><span class="o">=</span><span class="s1">&#39;TERRAIN&#39;</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="s1">&#39;OpenTopoMap&#39;</span><span class="p">,</span> <span class="n">left_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">right_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">zoom_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fullscreen_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">add_close_button</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">left_position</span><span class="o">=</span><span class="s1">&#39;bottomleft&#39;</span><span class="p">,</span> <span class="n">right_position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="n">widget_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.split_map" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -14028,6 +14397,14 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">right_layer</span><span class="o">=</span><span class="s2">&quot;OpenTopoMap&quot;</span><span class="p">,</span>
     <span class="n">left_args</span><span class="o">=</span><span class="p">{},</span>
     <span class="n">right_args</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">zoom_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fullscreen_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">add_close_button</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">left_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">right_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">left_position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span>
+    <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+    <span class="n">widget_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Adds split map.</span>
 
@@ -14056,6 +14433,26 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">try</span><span class="p">:</span>
+
+        <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controls</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_controls</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">zoom_control</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ZoomControl</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">fullscreen_control</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">FullScreenControl</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">left_name</span> <span class="o">=</span> <span class="n">left_label</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">left_name</span> <span class="o">=</span> <span class="s2">&quot;Left Layer&quot;</span>
+
+        <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">right_name</span> <span class="o">=</span> <span class="n">right_label</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">right_name</span> <span class="o">=</span> <span class="s2">&quot;Right Layer&quot;</span>
+
         <span class="k">if</span> <span class="n">left_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="n">left_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">left_layer</span><span class="p">]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -14065,7 +14462,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
                 <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span>
                 <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Left Layer&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">left_name</span><span class="p">,</span>
                     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="k">elif</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.geojson&quot;</span><span class="p">):</span>
@@ -14092,7 +14489,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">left_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                     <span class="n">url</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Left Layer&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">left_name</span><span class="p">,</span>
                     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                     <span class="o">**</span><span class="n">left_args</span><span class="p">,</span>
                 <span class="p">)</span>
@@ -14117,7 +14514,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
                 <span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span>
                 <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Right Layer&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">right_name</span><span class="p">,</span>
                     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="k">elif</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
@@ -14147,7 +14544,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">right_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
                     <span class="n">url</span><span class="o">=</span><span class="n">right_layer</span><span class="p">,</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Right Layer&quot;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">right_name</span><span class="p">,</span>
                     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                     <span class="o">**</span><span class="n">right_args</span><span class="p">,</span>
                 <span class="p">)</span>
@@ -14163,6 +14560,27 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">left_layer</span><span class="o">=</span><span class="n">left_layer</span><span class="p">,</span> <span class="n">right_layer</span><span class="o">=</span><span class="n">right_layer</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+            <span class="n">left_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">left_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
+
+            <span class="n">left_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+                <span class="n">widget</span><span class="o">=</span><span class="n">left_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">left_position</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
+            <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">right_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
+            <span class="n">right_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
+                <span class="n">widget</span><span class="o">=</span><span class="n">right_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">right_position</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">right_control</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 

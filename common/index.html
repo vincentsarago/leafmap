@@ -1681,6 +1681,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.show_html" class="md-nav__link">
+    show_html()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.show_image" class="md-nav__link">
     show_image()
   </a>
@@ -4127,6 +4134,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.set_proxy" class="md-nav__link">
     set_proxy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.show_html" class="md-nav__link">
+    show_html()
   </a>
   
 </li>
@@ -9266,14 +9280,14 @@ for compatibility with the new point_format. The file version will not be downgr
 
 
 <h2 id="leafmap.common.create_legend" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_legend</span><span class="p">(</span><span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Legend&#39;</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">create_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Legend&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="n">draggable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{})</span></code>
 
 
 <a href="#leafmap.common.create_legend" class="headerlink" title="Permanent link">&para;</a></h2>
 
     <div class="doc doc-contents ">
 
-      <p>Create a custom legend.</p>
+      <p>Create a legend in HTML format. Reference: https://bit.ly/3oV6vnH</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -9287,27 +9301,28 @@ for compatibility with the new point_format. The file version will not be downgr
   </thead>
   <tbody>
       <tr>
-        <td><code>legend_title</code></td>
+        <td><code>title</code></td>
         <td><code>str</code></td>
-        <td><p>Title of the legend. Defaults to 'Legend'.</p></td>
+        <td><p>Title of the legend. Defaults to 'Legend'. Defaults to "Legend".</p></td>
         <td><code>&#39;Legend&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>colors</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of legend colors. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>labels</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of legend labels. Defaults to None.</p></td>
+        <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>legend_dict</code></td>
         <td><code>dict</code></td>
-        <td><p>A dictionary containing legend items as keys and color as values. If provided, legend_keys and legend_colors will be ignored. Defaults to None.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>legend_keys</code></td>
-        <td><code>list</code></td>
-        <td><p>A list of legend keys. Defaults to None.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>legend_colors</code></td>
-        <td><code>list</code></td>
-        <td><p>A list of legend colors. Defaults to None.</p></td>
+        <td><p>A dictionary containing legend items as keys and color as values.
+If provided, legend_keys and legend_colors will be ignored. Defaults to None.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
@@ -9316,91 +9331,150 @@ for compatibility with the new point_format. The file version will not be downgr
         <td><p>Name of the builtin legend to add to the map. Defaults to None.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>opacity</code></td>
+        <td><code>float</code></td>
+        <td><p>The opacity of the legend. Defaults to 1.0.</p></td>
+        <td><code>1.0</code></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the legend, can be one of the following:
+"topleft", "topright", "bottomleft", "bottomright". Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>draggable</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, the legend can be dragged to a new position. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>output</code></td>
+        <td><code>str</code></td>
+        <td><p>The output file path (*.html) to save the legend. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>style</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to style the legend, such as position, bottom, right, z-index,
+border, background-color, border-radius, padding, font-size, etc. The default style is:
+style = {
+    'position': 'fixed',
+    'z-index': '9999',
+    'border': '2px solid grey',
+    'background-color': 'rgba(255, 255, 255, 0.8)',
+    'border-radius': '5px',
+    'padding': '10px',
+    'font-size': '14px',
+    'bottom': '20px',
+    'right': '5px'
+}</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>The HTML code of the legend.</p></td>
+    </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_legend</span><span class="p">(</span>
-    <span class="n">legend_title</span><span class="o">=</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">legend_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">legend_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">legend_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">builtin_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+    <span class="n">draggable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="p">{},</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a custom legend.</span>
+
+    <span class="sd">&quot;&quot;&quot;Create a legend in HTML format. Reference: https://bit.ly/3oV6vnH</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        legend_title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;.</span>
-<span class="sd">        legend_dict (dict, optional): A dictionary containing legend items as keys and color as values. If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
-<span class="sd">        legend_keys (list, optional): A list of legend keys. Defaults to None.</span>
-<span class="sd">        legend_colors (list, optional): A list of legend colors. Defaults to None.</span>
+<span class="sd">        title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;. Defaults to &quot;Legend&quot;.</span>
+<span class="sd">        colors (list, optional): A list of legend colors. Defaults to None.</span>
+<span class="sd">        labels (list, optional): A list of legend labels. Defaults to None.</span>
+<span class="sd">        legend_dict (dict, optional): A dictionary containing legend items as keys and color as values.</span>
+<span class="sd">            If provided, legend_keys and legend_colors will be ignored. Defaults to None.</span>
 <span class="sd">        builtin_legend (str, optional): Name of the builtin legend to add to the map. Defaults to None.</span>
+<span class="sd">        opacity (float, optional): The opacity of the legend. Defaults to 1.0.</span>
+<span class="sd">        position (str, optional): The position of the legend, can be one of the following:</span>
+<span class="sd">            &quot;topleft&quot;, &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">        draggable (bool, optional): If True, the legend can be dragged to a new position. Defaults to True.</span>
+<span class="sd">        output (str, optional): The output file path (*.html) to save the legend. Defaults to None.</span>
+<span class="sd">        style: Additional keyword arguments to style the legend, such as position, bottom, right, z-index,</span>
+<span class="sd">            border, background-color, border-radius, padding, font-size, etc. The default style is:</span>
+<span class="sd">            style = {</span>
+<span class="sd">                &#39;position&#39;: &#39;fixed&#39;,</span>
+<span class="sd">                &#39;z-index&#39;: &#39;9999&#39;,</span>
+<span class="sd">                &#39;border&#39;: &#39;2px solid grey&#39;,</span>
+<span class="sd">                &#39;background-color&#39;: &#39;rgba(255, 255, 255, 0.8)&#39;,</span>
+<span class="sd">                &#39;border-radius&#39;: &#39;5px&#39;,</span>
+<span class="sd">                &#39;padding&#39;: &#39;10px&#39;,</span>
+<span class="sd">                &#39;font-size&#39;: &#39;14px&#39;,</span>
+<span class="sd">                &#39;bottom&#39;: &#39;20px&#39;,</span>
+<span class="sd">                &#39;right&#39;: &#39;5px&#39;</span>
+<span class="sd">            }</span>
 
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The HTML code of the legend.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="kn">import</span> <span class="nn">pkg_resources</span>
     <span class="kn">from</span> <span class="nn">.legends</span> <span class="kn">import</span> <span class="n">builtin_legends</span>
 
     <span class="n">pkg_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s2">&quot;leafmap&quot;</span><span class="p">,</span> <span class="s2">&quot;leafmap.py&quot;</span><span class="p">))</span>
-    <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.html&quot;</span><span class="p">)</span>
+    <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend_style.html&quot;</span><span class="p">)</span>
 
-    <span class="c1"># if &quot;min_width&quot; not in kwargs.keys():</span>
-    <span class="c1">#     min_width = None</span>
-    <span class="c1"># if &quot;max_width&quot; not in kwargs.keys():</span>
-    <span class="c1">#     max_width = None</span>
-    <span class="c1"># else:</span>
-    <span class="c1">#     max_width = kwargs[&quot;max_width&quot;]</span>
-    <span class="c1"># if &quot;min_height&quot; not in kwargs.keys():</span>
-    <span class="c1">#     min_height = None</span>
-    <span class="c1"># else:</span>
-    <span class="c1">#     min_height = kwargs[&quot;min_height&quot;]</span>
-    <span class="c1"># if &quot;max_height&quot; not in kwargs.keys():</span>
-    <span class="c1">#     max_height = None</span>
-    <span class="c1"># else:</span>
-    <span class="c1">#     max_height = kwargs[&quot;max_height&quot;]</span>
-    <span class="c1"># if &quot;height&quot; not in kwargs.keys():</span>
-    <span class="c1">#     height = None</span>
-    <span class="c1"># else:</span>
-    <span class="c1">#     height = kwargs[&quot;height&quot;]</span>
-    <span class="c1"># if &quot;width&quot; not in kwargs.keys():</span>
-    <span class="c1">#     width = None</span>
-    <span class="c1"># else:</span>
-    <span class="c1">#     width = kwargs[&quot;width&quot;]</span>
-
-    <span class="c1"># if width is None:</span>
-    <span class="c1">#     max_width = &quot;300px&quot;</span>
-    <span class="c1"># if height is None:</span>
-    <span class="c1">#     max_height = &quot;400px&quot;</span>
+    <span class="k">if</span> <span class="n">draggable</span><span class="p">:</span>
+        <span class="n">legend_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/template/legend.txt&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">legend_template</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend template does not exist.&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The legend template does not exist.&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">legend_keys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">legend_keys</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend keys must be a list.&quot;</span><span class="p">)</span>
             <span class="k">return</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">legend_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;One&quot;</span><span class="p">,</span> <span class="s2">&quot;Two&quot;</span><span class="p">,</span> <span class="s2">&quot;Three&quot;</span><span class="p">,</span> <span class="s2">&quot;Four&quot;</span><span class="p">,</span> <span class="s2">&quot;etc&quot;</span><span class="p">]</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;One&quot;</span><span class="p">,</span> <span class="s2">&quot;Two&quot;</span><span class="p">,</span> <span class="s2">&quot;Three&quot;</span><span class="p">,</span> <span class="s2">&quot;Four&quot;</span><span class="p">,</span> <span class="s2">&quot;etc&quot;</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">legend_colors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">legend_colors</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">colors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend colors must be a list.&quot;</span><span class="p">)</span>
             <span class="k">return</span>
-        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">legend_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">rgb_to_hex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">]</span>
+                <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">rgb_to_hex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">]</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="nb">all</span><span class="p">((</span><span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">((</span><span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">):</span>
             <span class="k">pass</span>
-        <span class="k">elif</span> <span class="nb">all</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">):</span>
             <span class="k">pass</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend colors must be a list of tuples.&quot;</span><span class="p">)</span>
             <span class="k">return</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">legend_colors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s2">&quot;#8DD3C7&quot;</span><span class="p">,</span>
             <span class="s2">&quot;#FFFFB3&quot;</span><span class="p">,</span>
             <span class="s2">&quot;#BEBADA&quot;</span><span class="p">,</span>
@@ -9408,7 +9482,7 @@ for compatibility with the new point_format. The file version will not be downgr
             <span class="s2">&quot;#80B1D3&quot;</span><span class="p">,</span>
         <span class="p">]</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">legend_keys</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">legend_colors</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend keys and values must be the same length.&quot;</span><span class="p">)</span>
         <span class="k">return</span>
 
@@ -9423,44 +9497,148 @@ for compatibility with the new point_format. The file version will not be downgr
             <span class="k">return</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">legend_dict</span> <span class="o">=</span> <span class="n">builtin_legends</span><span class="p">[</span><span class="n">builtin_legend</span><span class="p">]</span>
-            <span class="n">legend_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-            <span class="n">legend_colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">legend_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">legend_dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The legend dict must be a dictionary.&quot;</span><span class="p">)</span>
             <span class="k">return</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">legend_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-            <span class="n">legend_colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">):</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">legend_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">):</span>
                 <span class="k">try</span><span class="p">:</span>
-                    <span class="n">legend_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">rgb_to_hex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">legend_colors</span><span class="p">]</span>
+                    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">rgb_to_hex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">]</span>
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-    <span class="n">header</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">allowed_positions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;topleft&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;topright&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bottomleft&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">position</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_positions</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;The position must be one of the following: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">allowed_positions</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;bottom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;20px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;right&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;left&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;top&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;bottom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;left&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;right&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;top&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topright&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;top&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;right&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;left&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;bottom&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topleft&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;top&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;left&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="n">style</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;right&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;bottom&quot;</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">style</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="s2">&quot;position&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fixed&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;z-index&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;z-index&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;9999&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;background-color&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;background-color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;rgba(255, 255, 255, 0.8)&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;padding&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;10px&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;border-radius&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;border-radius&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;5px&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;font-size&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">style</span><span class="p">:</span>
+        <span class="n">style</span><span class="p">[</span><span class="s2">&quot;font-size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;14px&quot;</span>
+
     <span class="n">content</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">footer</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">legend_template</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-        <span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span> <span class="n">legend_title</span><span class="p">)</span>
-        <span class="n">header</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
-        <span class="n">footer</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span>
 
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">legend_keys</span><span class="p">):</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">legend_colors</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">color</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
-            <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span> <span class="o">+</span> <span class="n">color</span>
-        <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;      &lt;li&gt;&lt;span style=&#39;background:</span><span class="si">{}</span><span class="s2">;&#39;&gt;&lt;/span&gt;</span><span class="si">{}</span><span class="s2">&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">color</span><span class="p">,</span> <span class="n">key</span>
-        <span class="p">)</span>
-        <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">draggable</span><span class="p">:</span>
 
-    <span class="n">legend_html</span> <span class="o">=</span> <span class="n">header</span> <span class="o">+</span> <span class="n">content</span> <span class="o">+</span> <span class="n">footer</span>
-    <span class="n">legend_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend_html</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">legend_text</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">36</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">36</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">39</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">39</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+                    <span class="n">item</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;    &lt;li&gt;&lt;span style=&#39;background:</span><span class="si">{</span><span class="n">check_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span><span class="si">}</span><span class="s2">;opacity:</span><span class="si">{</span><span class="n">opacity</span><span class="si">}</span><span class="s2">;&#39;&gt;&lt;/span&gt;</span><span class="si">{</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="mi">41</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">style</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="s2">&quot;              </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">17</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">19</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">22</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">22</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+                    <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">color</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span> <span class="o">+</span> <span class="n">color</span>
+                    <span class="n">item</span> <span class="o">=</span> <span class="s2">&quot;                    &lt;li&gt;&lt;span style=&#39;background:</span><span class="si">{}</span><span class="s2">;opacity:</span><span class="si">{}</span><span class="s2">;&#39;&gt;&lt;/span&gt;</span><span class="si">{}</span><span class="s2">&lt;/li&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">color</span><span class="p">,</span> <span class="n">opacity</span><span class="p">,</span> <span class="n">key</span>
+                    <span class="p">)</span>
+                    <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">33</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="n">legend_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">legend_text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">legend_text</span>
 </code></pre></div>
         </details>
     </div>
@@ -10634,7 +10812,7 @@ for compatibility with the new point_format. The file version will not be downgr
     <span class="k">else</span><span class="p">:</span>
 
         <span class="n">obj</span> <span class="o">=</span> <span class="n">pyodide</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">open_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
             <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">output</span>
@@ -21323,6 +21501,104 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.show_html" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">show_html</span><span class="p">(</span><span class="n">html</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.show_html" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Shows HTML within Jupyter notebook.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>html</code></td>
+        <td><code>str</code></td>
+        <td><p>File path or HTML string.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>FileNotFoundError</code></td>
+        <td><p>If the file does not exist.</p></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ipywidgets.HTML</code></td>
+      <td><p>HTML widget.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">show_html</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Shows HTML within Jupyter notebook.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        html (str): File path or HTML string.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        FileNotFoundError: If the file does not exist.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ipywidgets.HTML: HTML widget.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">widget</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">html</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">widget</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
