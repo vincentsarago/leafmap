@@ -2968,6 +2968,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/59_create_legend/" class="md-nav__link">
+        59 create legend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/60_add_widget/" class="md-nav__link">
+        60 add widget
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6719,7 +6747,7 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
       <tr>
         <td><code>in_color</code></td>
         <td><code>str or tuple</code></td>
-        <td><p>It can be a string (e.g., 'red', '#ffff00') or tuple (e.g., (255, 127, 0)).</p></td>
+        <td><p>It can be a string (e.g., 'red', '#ffff00', 'ffff00', 'ff0') or RGB tuple (e.g., (255, 127, 0)).</p></td>
         <td><em>required</em></td>
       </tr>
   </tbody>
@@ -6745,7 +6773,7 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
     <span class="sd">&quot;&quot;&quot;Checks the input color and returns the corresponding hex color code.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        in_color (str or tuple): It can be a string (e.g., &#39;red&#39;, &#39;#ffff00&#39;) or tuple (e.g., (255, 127, 0)).</span>
+<span class="sd">        in_color (str or tuple): It can be a string (e.g., &#39;red&#39;, &#39;#ffff00&#39;, &#39;ffff00&#39;, &#39;ff0&#39;) or RGB tuple (e.g., (255, 127, 0)).</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        str: A hex color code.</span>
@@ -6754,23 +6782,33 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 
     <span class="n">out_color</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span>  <span class="c1"># default black color</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_color</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+
+        <span class="c1"># rescale color if necessary</span>
         <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">in_color</span><span class="p">):</span>
-            <span class="n">rescaled_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">in_color</span><span class="p">]</span>
-            <span class="n">out_color</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">rescaled_color</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">out_color</span><span class="o">.</span><span class="n">hex_l</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span>
-                <span class="s2">&quot;RGB color must be a tuple with three integer values ranging from 0 to 255.&quot;</span>
-            <span class="p">)</span>
-            <span class="k">return</span>
+            <span class="n">in_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">in_color</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">in_color</span><span class="p">))</span><span class="o">.</span><span class="n">hex_l</span>
+
     <span class="k">else</span><span class="p">:</span>
+
+        <span class="c1"># try to guess the color system</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">out_color</span> <span class="o">=</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">in_color</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">out_color</span><span class="o">.</span><span class="n">hex_l</span>
+            <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">in_color</span><span class="p">)</span><span class="o">.</span><span class="n">hex_l</span>
+
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The provided color is invalid. Using the default black color.&quot;</span><span class="p">)</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># try again by adding an extra # (GEE handle hex codes without #)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">in_color</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hex_l</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The provided color (</span><span class="si">{</span><span class="n">in_color</span><span class="si">}</span><span class="s2">) is invalid. Using the default black color.&quot;</span>
+            <span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">out_color</span>
+
+        <span class="k">return</span> <span class="n">out_color</span>
 </code></pre></div>
         </details>
     </div>

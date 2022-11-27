@@ -421,6 +421,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leafmap.org/notebooks/59_create_legend/</loc>
+         <lastmod>2022-11-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://leafmap.org/notebooks/60_add_widget/</loc>
+         <lastmod>2022-11-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leafmap.org/notebooks/zz_notebook_template/</loc>
          <lastmod>2022-11-27</lastmod>
          <changefreq>daily</changefreq>

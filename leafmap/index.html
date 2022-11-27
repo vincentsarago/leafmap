@@ -915,6 +915,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_text" class="md-nav__link">
+    add_text()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_tile_layer" class="md-nav__link">
     add_tile_layer()
   </a>
@@ -2214,6 +2221,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/59_create_legend/" class="md-nav__link">
+        59 create legend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/60_add_widget/" class="md-nav__link">
+        60 add widget
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2544,6 +2579,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_stac_layer" class="md-nav__link">
     add_stac_layer()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_text" class="md-nav__link">
+    add_text()
   </a>
   
 </li>
@@ -6655,6 +6697,43 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">                &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_text</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">fontcolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;5px&quot;</span><span class="p">,</span>
+        <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">bg_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="n">border_radius</span><span class="o">=</span><span class="s2">&quot;5px&quot;</span><span class="p">,</span>
+        <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            text (str): The text to add.</span>
+<span class="sd">            fontsize (int, optional): The font size. Defaults to 20.</span>
+<span class="sd">            fontcolor (str, optional): The font color. Defaults to &quot;black&quot;.</span>
+<span class="sd">            bold (bool, optional): Whether to use bold font. Defaults to False.</span>
+<span class="sd">            padding (str, optional): The padding. Defaults to &quot;5px&quot;.</span>
+<span class="sd">            background (bool, optional): Whether to use background. Defaults to True.</span>
+<span class="sd">            bg_color (str, optional): The background color. Defaults to &quot;white&quot;.</span>
+<span class="sd">            border_radius (str, optional): The border radius. Defaults to &quot;5px&quot;.</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">            border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
 
@@ -12386,6 +12465,133 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="p">}</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_text" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontcolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;5px&#39;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">border_radius</span><span class="o">=</span><span class="s1">&#39;5px&#39;</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_text" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add text to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>text</code></td>
+        <td><code>str</code></td>
+        <td><p>The text to add.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>fontsize</code></td>
+        <td><code>int</code></td>
+        <td><p>The font size. Defaults to 20.</p></td>
+        <td><code>20</code></td>
+      </tr>
+      <tr>
+        <td><code>fontcolor</code></td>
+        <td><code>str</code></td>
+        <td><p>The font color. Defaults to "black".</p></td>
+        <td><code>&#39;black&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>bold</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to use bold font. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>padding</code></td>
+        <td><code>str</code></td>
+        <td><p>The padding. Defaults to "5px".</p></td>
+        <td><code>&#39;5px&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>background</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to use background. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>bg_color</code></td>
+        <td><code>str</code></td>
+        <td><p>The background color. Defaults to "white".</p></td>
+        <td><code>&#39;white&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>border_radius</code></td>
+        <td><code>str</code></td>
+        <td><p>The border radius. Defaults to "5px".</p></td>
+        <td><code>&#39;5px&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "bottomright".</p></td>
+        <td><code>&#39;bottomright&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_text</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">text</span><span class="p">,</span>
+    <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">fontcolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">bold</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;5px&quot;</span><span class="p">,</span>
+    <span class="n">background</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">bg_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">border_radius</span><span class="o">=</span><span class="s2">&quot;5px&quot;</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        text (str): The text to add.</span>
+<span class="sd">        fontsize (int, optional): The font size. Defaults to 20.</span>
+<span class="sd">        fontcolor (str, optional): The font color. Defaults to &quot;black&quot;.</span>
+<span class="sd">        bold (bool, optional): Whether to use bold font. Defaults to False.</span>
+<span class="sd">        padding (str, optional): The padding. Defaults to &quot;5px&quot;.</span>
+<span class="sd">        background (bool, optional): Whether to use background. Defaults to True.</span>
+<span class="sd">        bg_color (str, optional): The background color. Defaults to &quot;white&quot;.</span>
+<span class="sd">        border_radius (str, optional): The border radius. Defaults to &quot;5px&quot;.</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;bottomright&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">        border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+<span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
