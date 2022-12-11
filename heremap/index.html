@@ -2280,23 +2280,26 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
             <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
             <span class="n">html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
-        <span class="n">geojson</span> <span class="o">=</span> <span class="n">GeoJSON</span><span class="p">(</span>
-            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-            <span class="n">style</span><span class="o">=</span><span class="n">style</span> <span class="k">if</span> <span class="n">style</span> <span class="k">else</span> <span class="p">{},</span>
-            <span class="n">hover_style</span><span class="o">=</span><span class="n">hover_style</span> <span class="k">if</span> <span class="n">hover_style</span> <span class="k">else</span> <span class="p">{},</span>
-            <span class="n">style_callback</span><span class="o">=</span><span class="n">style_callback</span><span class="p">,</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
-            <span class="n">point_style</span><span class="o">=</span><span class="n">point_style</span> <span class="k">if</span> <span class="n">point_style</span> <span class="k">else</span> <span class="p">{},</span>
-            <span class="n">show_bubble</span><span class="o">=</span><span class="n">default_popup</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">geojson</span> <span class="o">=</span> <span class="n">GeoJSON</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                <span class="n">style</span><span class="o">=</span><span class="n">style</span> <span class="k">if</span> <span class="n">style</span> <span class="k">else</span> <span class="p">{},</span>
+                <span class="n">hover_style</span><span class="o">=</span><span class="n">hover_style</span> <span class="k">if</span> <span class="n">hover_style</span> <span class="k">else</span> <span class="p">{},</span>
+                <span class="n">style_callback</span><span class="o">=</span><span class="n">style_callback</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
+                <span class="n">point_style</span><span class="o">=</span><span class="n">point_style</span> <span class="k">if</span> <span class="n">point_style</span> <span class="k">else</span> <span class="p">{},</span>
+                <span class="n">show_bubble</span><span class="o">=</span><span class="n">default_popup</span><span class="p">,</span>
+            <span class="p">)</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">default_popup</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
-                <span class="n">geojson</span><span class="o">.</span><span class="n">on_hover</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
-                <span class="n">geojson</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">default_popup</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
+                    <span class="n">geojson</span><span class="o">.</span><span class="n">on_hover</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
+                    <span class="n">geojson</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_shp</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -3083,23 +3086,26 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="n">html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
-    <span class="n">geojson</span> <span class="o">=</span> <span class="n">GeoJSON</span><span class="p">(</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-        <span class="n">style</span><span class="o">=</span><span class="n">style</span> <span class="k">if</span> <span class="n">style</span> <span class="k">else</span> <span class="p">{},</span>
-        <span class="n">hover_style</span><span class="o">=</span><span class="n">hover_style</span> <span class="k">if</span> <span class="n">hover_style</span> <span class="k">else</span> <span class="p">{},</span>
-        <span class="n">style_callback</span><span class="o">=</span><span class="n">style_callback</span><span class="p">,</span>
-        <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
-        <span class="n">point_style</span><span class="o">=</span><span class="n">point_style</span> <span class="k">if</span> <span class="n">point_style</span> <span class="k">else</span> <span class="p">{},</span>
-        <span class="n">show_bubble</span><span class="o">=</span><span class="n">default_popup</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">geojson</span> <span class="o">=</span> <span class="n">GeoJSON</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">style</span><span class="o">=</span><span class="n">style</span> <span class="k">if</span> <span class="n">style</span> <span class="k">else</span> <span class="p">{},</span>
+            <span class="n">hover_style</span><span class="o">=</span><span class="n">hover_style</span> <span class="k">if</span> <span class="n">hover_style</span> <span class="k">else</span> <span class="p">{},</span>
+            <span class="n">style_callback</span><span class="o">=</span><span class="n">style_callback</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
+            <span class="n">point_style</span><span class="o">=</span><span class="n">point_style</span> <span class="k">if</span> <span class="n">point_style</span> <span class="k">else</span> <span class="p">{},</span>
+            <span class="n">show_bubble</span><span class="o">=</span><span class="n">default_popup</span><span class="p">,</span>
+        <span class="p">)</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">default_popup</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
-            <span class="n">geojson</span><span class="o">.</span><span class="n">on_hover</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
-            <span class="n">geojson</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">default_popup</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
+                <span class="n">geojson</span><span class="o">.</span><span class="n">on_hover</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
+                <span class="n">geojson</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">_update_html</span><span class="p">)</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">geojson</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
