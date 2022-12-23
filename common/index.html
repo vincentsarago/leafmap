@@ -708,6 +708,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.arc_active_map" class="md-nav__link">
+    arc_active_map()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_active_view" class="md-nav__link">
+    arc_active_view()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_add_layer" class="md-nav__link">
+    arc_add_layer()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_zoom_to_extent" class="md-nav__link">
+    arc_zoom_to_extent()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.basemap_xyz_tiles" class="md-nav__link">
     basemap_xyz_tiles()
   </a>
@@ -1361,6 +1389,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.image_to_numpy" class="md-nav__link">
     image_to_numpy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.is_arcpy" class="md-nav__link">
+    is_arcpy()
   </a>
   
 </li>
@@ -3115,6 +3150,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/63_arcgis/" class="md-nav__link">
+        63 arcgis
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3308,6 +3357,34 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.adjust_longitude" class="md-nav__link">
     adjust_longitude()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_active_map" class="md-nav__link">
+    arc_active_map()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_active_view" class="md-nav__link">
+    arc_active_view()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_add_layer" class="md-nav__link">
+    arc_add_layer()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.arc_zoom_to_extent" class="md-nav__link">
+    arc_zoom_to_extent()
   </a>
   
 </li>
@@ -3966,6 +4043,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.image_to_numpy" class="md-nav__link">
     image_to_numpy()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.is_arcpy" class="md-nav__link">
+    is_arcpy()
   </a>
   
 </li>
@@ -6884,6 +6968,275 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 
 
 
+<h2 id="leafmap.common.arc_active_map" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">arc_active_map</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.common.arc_active_map" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the active map in ArcGIS Pro.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>arcpy.Map</code></td>
+      <td><p>The active map in ArcGIS Pro.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">arc_active_map</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get the active map in ArcGIS Pro.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        arcpy.Map: The active map in ArcGIS Pro.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_arcpy</span><span class="p">():</span>
+        <span class="kn">import</span> <span class="nn">arcpy</span>
+
+        <span class="n">aprx</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">ArcGISProject</span><span class="p">(</span><span class="s2">&quot;CURRENT&quot;</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">aprx</span><span class="o">.</span><span class="n">activeMap</span>
+        <span class="k">return</span> <span class="n">m</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.arc_active_view" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">arc_active_view</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.common.arc_active_view" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the active view in ArcGIS Pro.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>arcpy.MapView</code></td>
+      <td><p>The active view in ArcGIS Pro.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">arc_active_view</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Get the active view in ArcGIS Pro.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        arcpy.MapView: The active view in ArcGIS Pro.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_arcpy</span><span class="p">():</span>
+        <span class="kn">import</span> <span class="nn">arcpy</span>
+
+        <span class="n">aprx</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">ArcGISProject</span><span class="p">(</span><span class="s2">&quot;CURRENT&quot;</span><span class="p">)</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">aprx</span><span class="o">.</span><span class="n">activeView</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.arc_add_layer" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">arc_add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.arc_add_layer" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Add a layer to the active map in ArcGIS Pro.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>url</code></td>
+        <td><code>str</code></td>
+        <td><p>The URL of the tile layer to add.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>The name of the layer. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>shown</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether the layer is shown. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>opacity</code></td>
+        <td><code>float</code></td>
+        <td><p>The opacity of the layer. Defaults to 1.0.</p></td>
+        <td><code>1.0</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">arc_add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add a layer to the active map in ArcGIS Pro.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        url (str): The URL of the tile layer to add.</span>
+<span class="sd">        name (str, optional): The name of the layer. Defaults to None.</span>
+<span class="sd">        shown (bool, optional): Whether the layer is shown. Defaults to True.</span>
+<span class="sd">        opacity (float, optional): The opacity of the layer. Defaults to 1.0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_arcpy</span><span class="p">():</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">arc_active_map</span><span class="p">()</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">addDataFromPath</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">layers</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">listLayers</span><span class="p">(</span><span class="s2">&quot;Tiled service layer&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">layer</span> <span class="o">=</span> <span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+                <span class="n">layer</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="n">shown</span>
+                <span class="n">layer</span><span class="o">.</span><span class="n">transparency</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="p">(</span><span class="n">opacity</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.arc_zoom_to_extent" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.arc_zoom_to_extent" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Zoom to an extent in ArcGIS Pro.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>xmin</code></td>
+        <td><code>float</code></td>
+        <td><p>The minimum x value of the extent.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>ymin</code></td>
+        <td><code>float</code></td>
+        <td><p>The minimum y value of the extent.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>xmax</code></td>
+        <td><code>float</code></td>
+        <td><p>The maximum x value of the extent.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>ymax</code></td>
+        <td><code>float</code></td>
+        <td><p>The maximum y value of the extent.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">arc_zoom_to_extent</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Zoom to an extent in ArcGIS Pro.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        xmin (float): The minimum x value of the extent.</span>
+<span class="sd">        ymin (float): The minimum y value of the extent.</span>
+<span class="sd">        xmax (float): The maximum x value of the extent.</span>
+<span class="sd">        ymax (float): The maximum y value of the extent.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_arcpy</span><span class="p">():</span>
+        <span class="kn">import</span> <span class="nn">arcpy</span>
+
+        <span class="n">view</span> <span class="o">=</span> <span class="n">arc_active_view</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">setExtent</span><span class="p">(</span>
+            <span class="n">arcpy</span><span class="o">.</span><span class="n">Extent</span><span class="p">(</span>
+                <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">spatial_reference</span><span class="o">=</span><span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="mi">4326</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="c1"># if isinstance(zoom, int):</span>
+        <span class="c1">#     scale = 156543.04 * math.cos(0) / math.pow(2, zoom)</span>
+        <span class="c1">#     view.camera.scale = scale  # Not working properly</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.common.basemap_xyz_tiles" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">basemap_xyz_tiles</span><span class="p">()</span></code>
 
@@ -9427,11 +9780,11 @@ For example, to apply a rescaling to multiple bands, use something like <code>re
         <span class="k">if</span> <span class="s2">&quot;message&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">rescale</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;bidx&quot;</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">band_names</span><span class="p">:</span>
                     <span class="n">rescale</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                            <span class="n">stats</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)][</span><span class="s2">&quot;percentile_2&quot;</span><span class="p">],</span>
-                            <span class="n">stats</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)][</span><span class="s2">&quot;percentile_98&quot;</span><span class="p">],</span>
+                            <span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;percentile_2&quot;</span><span class="p">],</span>
+                            <span class="n">stats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s2">&quot;percentile_98&quot;</span><span class="p">],</span>
                         <span class="p">)</span>
                     <span class="p">)</span>
                 <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;rescale&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rescale</span>
@@ -17050,6 +17403,57 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 
   </div>
 
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.is_arcpy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_arcpy</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.common.is_arcpy" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Check if arcpy is available.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>book</code></td>
+      <td><p>True if arcpy is available, False otherwise.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_arcpy</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Check if arcpy is available.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        book: True if arcpy is available, False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="k">if</span> <span class="s2">&quot;arcpy&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
 
 
 

@@ -441,6 +441,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leafmap.org/notebooks/63_arcgis/</loc>
+         <lastmod>2022-12-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leafmap.org/notebooks/zz_notebook_template/</loc>
          <lastmod>2022-12-23</lastmod>
          <changefreq>daily</changefreq>
