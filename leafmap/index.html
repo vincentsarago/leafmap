@@ -3097,9 +3097,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">if</span> <span class="s2">&quot;scroll_wheel_zoom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;scroll_wheel_zoom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-        <span class="k">if</span> <span class="s2">&quot;attribution_control&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;attribution_control&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">baseclass</span> <span class="o">=</span> <span class="s2">&quot;ipyleaflet&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span> <span class="o">=</span> <span class="kc">None</span>
@@ -4559,14 +4556,14 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span>
-        <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
         <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
         <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
         <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
         <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
@@ -7366,7 +7363,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
 
 
 <h3 id="leafmap.leafmap.Map.add_colormap" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_colormap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_colormap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_colormap" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -7414,13 +7411,13 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <td><code>width</code></td>
         <td><code>float</code></td>
         <td><p>The width of the colormap. Defaults to 8.0.</p></td>
-        <td><code>8.0</code></td>
+        <td><code>3</code></td>
       </tr>
       <tr>
         <td><code>height</code></td>
         <td><code>float</code></td>
         <td><p>The height of the colormap. Defaults to 0.4.</p></td>
-        <td><code>0.4</code></td>
+        <td><code>0.25</code></td>
       </tr>
       <tr>
         <td><code>orientation</code></td>
@@ -7456,7 +7453,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <td><code>font_size</code></td>
         <td><code>int</code></td>
         <td><p>Font size of the text. Defaults to 12.</p></td>
-        <td><code>12</code></td>
+        <td><code>8</code></td>
       </tr>
       <tr>
         <td><code>transparent_bg</code></td>
@@ -7480,14 +7477,14 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
     <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
     <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>

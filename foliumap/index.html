@@ -5108,26 +5108,75 @@ Map            (<span title="folium.folium.Map">Map</span>)
 
     <span class="k">def</span> <span class="nf">add_colormap</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
-        <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span>
-        <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-        <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
         <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
         <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-        <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vis_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
+        <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">label_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">label_weight</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+        <span class="n">tick_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+        <span class="n">bg_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
+        <span class="n">dpi</span><span class="o">=</span><span class="s2">&quot;figure&quot;</span><span class="p">,</span>
+        <span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.&quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-            <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            width (float): Width of the colorbar in inches. Default is 4.0.</span>
+<span class="sd">            height (float): Height of the colorbar in inches. Default is 0.3.</span>
+<span class="sd">            vmin (float): Minimum value of the colorbar. Default is 0.</span>
+<span class="sd">            vmax (float): Maximum value of the colorbar. Default is 1.0.</span>
+<span class="sd">            palette (list): List of colors to use for the colorbar. It can also be a cmap name, such as ndvi, ndwi, dem, coolwarm. Default is None.</span>
+<span class="sd">            vis_params (dict): Visualization parameters as a dictionary. See https://developers.google.com/earth-engine/guides/image_visualization for options.</span>
+<span class="sd">            cmap (str, optional): Matplotlib colormap. Defaults to &quot;gray&quot;. See https://matplotlib.org/3.3.4/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py for options.</span>
+<span class="sd">            discrete (bool, optional): Whether to create a discrete colorbar. Defaults to False.</span>
+<span class="sd">            label (str, optional): Label for the colorbar. Defaults to None.</span>
+<span class="sd">            label_size (int, optional): Font size for the colorbar label. Defaults to 12.</span>
+<span class="sd">            label_weight (str, optional): Font weight for the colorbar label, can be &quot;normal&quot;, &quot;bold&quot;, etc. Defaults to &quot;normal&quot;.</span>
+<span class="sd">            tick_size (int, optional): Font size for the colorbar tick labels. Defaults to 10.</span>
+<span class="sd">            bg_color (str, optional): Background color for the colorbar. Defaults to &quot;white&quot;.</span>
+<span class="sd">            orientation (str, optional): Orientation of the colorbar, such as &quot;vertical&quot; and &quot;horizontal&quot;. Defaults to &quot;horizontal&quot;.</span>
+<span class="sd">            dpi (float | str, optional): The resolution in dots per inch.  If &#39;figure&#39;, use the figure&#39;s dpi value. Defaults to &quot;figure&quot;.</span>
+<span class="sd">            transparent (bool, optional): Whether to make the background transparent. Defaults to False.</span>
+<span class="sd">            position (tuple, optional): The position of the colormap in the format of (x, y),</span>
+<span class="sd">                the percentage ranging from 0 to 100, starting from the lower-left corner. Defaults to (0, 0).</span>
+<span class="sd">            **kwargs: Other keyword arguments to pass to matplotlib.pyplot.savefig().</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Path to the output image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">colorbar</span> <span class="o">=</span> <span class="n">save_colorbar</span><span class="p">(</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="n">width</span><span class="p">,</span>
+            <span class="n">height</span><span class="p">,</span>
+            <span class="n">vmin</span><span class="p">,</span>
+            <span class="n">vmax</span><span class="p">,</span>
+            <span class="n">palette</span><span class="p">,</span>
+            <span class="n">vis_params</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="p">,</span>
+            <span class="n">discrete</span><span class="p">,</span>
+            <span class="n">label</span><span class="p">,</span>
+            <span class="n">label_size</span><span class="p">,</span>
+            <span class="n">label_weight</span><span class="p">,</span>
+            <span class="n">tick_size</span><span class="p">,</span>
+            <span class="n">bg_color</span><span class="p">,</span>
+            <span class="n">orientation</span><span class="p">,</span>
+            <span class="n">dpi</span><span class="p">,</span>
+            <span class="n">transparent</span><span class="p">,</span>
+            <span class="n">show_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">colorbar</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_points_from_xy</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -5754,20 +5803,24 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">base64</span>
 
-        <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topleft&quot;</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topright&quot;</span><span class="p">:</span>
-            <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-                <span class="n">image</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot;&gt;&#39;</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="s2">&quot;bottomright&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+            <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+
+                <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topleft&quot;</span><span class="p">:</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topright&quot;</span><span class="p">:</span>
+                    <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+
                 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">lf</span><span class="p">:</span>
                     <span class="c1"># open in binary mode, read bytes, encode, decode obtained bytes as utf-8 string</span>
                     <span class="n">b64_content</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">lf</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
@@ -6669,39 +6722,225 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
 
 
 <h3 id="leafmap.foliumap.Map.add_colormap" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_colormap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_colormap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vis_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">label_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">label_weight</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">tick_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">bg_color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="s1">&#39;figure&#39;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.foliumap.Map.add_colormap" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
 
-      <p>Adds a matplotlib colormap to the map.</p>
+      <p>Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</p>
 
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>width</code></td>
+        <td><code>float</code></td>
+        <td><p>Width of the colorbar in inches. Default is 4.0.</p></td>
+        <td><code>4.0</code></td>
+      </tr>
+      <tr>
+        <td><code>height</code></td>
+        <td><code>float</code></td>
+        <td><p>Height of the colorbar in inches. Default is 0.3.</p></td>
+        <td><code>0.3</code></td>
+      </tr>
+      <tr>
+        <td><code>vmin</code></td>
+        <td><code>float</code></td>
+        <td><p>Minimum value of the colorbar. Default is 0.</p></td>
+        <td><code>0</code></td>
+      </tr>
+      <tr>
+        <td><code>vmax</code></td>
+        <td><code>float</code></td>
+        <td><p>Maximum value of the colorbar. Default is 1.0.</p></td>
+        <td><code>1.0</code></td>
+      </tr>
+      <tr>
+        <td><code>palette</code></td>
+        <td><code>list</code></td>
+        <td><p>List of colors to use for the colorbar. It can also be a cmap name, such as ndvi, ndwi, dem, coolwarm. Default is None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>vis_params</code></td>
+        <td><code>dict</code></td>
+        <td><p>Visualization parameters as a dictionary. See https://developers.google.com/earth-engine/guides/image_visualization for options.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>cmap</code></td>
+        <td><code>str</code></td>
+        <td><p>Matplotlib colormap. Defaults to "gray". See https://matplotlib.org/3.3.4/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py for options.</p></td>
+        <td><code>&#39;gray&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>discrete</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to create a discrete colorbar. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>label</code></td>
+        <td><code>str</code></td>
+        <td><p>Label for the colorbar. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>label_size</code></td>
+        <td><code>int</code></td>
+        <td><p>Font size for the colorbar label. Defaults to 12.</p></td>
+        <td><code>10</code></td>
+      </tr>
+      <tr>
+        <td><code>label_weight</code></td>
+        <td><code>str</code></td>
+        <td><p>Font weight for the colorbar label, can be "normal", "bold", etc. Defaults to "normal".</p></td>
+        <td><code>&#39;normal&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>tick_size</code></td>
+        <td><code>int</code></td>
+        <td><p>Font size for the colorbar tick labels. Defaults to 10.</p></td>
+        <td><code>8</code></td>
+      </tr>
+      <tr>
+        <td><code>bg_color</code></td>
+        <td><code>str</code></td>
+        <td><p>Background color for the colorbar. Defaults to "white".</p></td>
+        <td><code>&#39;white&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>orientation</code></td>
+        <td><code>str</code></td>
+        <td><p>Orientation of the colorbar, such as "vertical" and "horizontal". Defaults to "horizontal".</p></td>
+        <td><code>&#39;horizontal&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>dpi</code></td>
+        <td><code>float | str</code></td>
+        <td><p>The resolution in dots per inch.  If 'figure', use the figure's dpi value. Defaults to "figure".</p></td>
+        <td><code>&#39;figure&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>transparent</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to make the background transparent. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>tuple</code></td>
+        <td><p>The position of the colormap in the format of (x, y),
+the percentage ranging from 0 to 100, starting from the lower-left corner. Defaults to (0, 0).</p></td>
+        <td><code>(70, 5)</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Other keyword arguments to pass to matplotlib.pyplot.savefig().</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>Path to the output image.</p></td>
+    </tr>
+  </tbody>
+</table>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_colormap</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
-    <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">axis_off</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">show_name</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">transparent_bg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">vis_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
+    <span class="n">discrete</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">label_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">label_weight</span><span class="o">=</span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+    <span class="n">tick_size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">bg_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="s2">&quot;figure&quot;</span><span class="p">,</span>
+    <span class="n">transparent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.&quot;&quot;&quot;</span>
-    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-        <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        width (float): Width of the colorbar in inches. Default is 4.0.</span>
+<span class="sd">        height (float): Height of the colorbar in inches. Default is 0.3.</span>
+<span class="sd">        vmin (float): Minimum value of the colorbar. Default is 0.</span>
+<span class="sd">        vmax (float): Maximum value of the colorbar. Default is 1.0.</span>
+<span class="sd">        palette (list): List of colors to use for the colorbar. It can also be a cmap name, such as ndvi, ndwi, dem, coolwarm. Default is None.</span>
+<span class="sd">        vis_params (dict): Visualization parameters as a dictionary. See https://developers.google.com/earth-engine/guides/image_visualization for options.</span>
+<span class="sd">        cmap (str, optional): Matplotlib colormap. Defaults to &quot;gray&quot;. See https://matplotlib.org/3.3.4/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py for options.</span>
+<span class="sd">        discrete (bool, optional): Whether to create a discrete colorbar. Defaults to False.</span>
+<span class="sd">        label (str, optional): Label for the colorbar. Defaults to None.</span>
+<span class="sd">        label_size (int, optional): Font size for the colorbar label. Defaults to 12.</span>
+<span class="sd">        label_weight (str, optional): Font weight for the colorbar label, can be &quot;normal&quot;, &quot;bold&quot;, etc. Defaults to &quot;normal&quot;.</span>
+<span class="sd">        tick_size (int, optional): Font size for the colorbar tick labels. Defaults to 10.</span>
+<span class="sd">        bg_color (str, optional): Background color for the colorbar. Defaults to &quot;white&quot;.</span>
+<span class="sd">        orientation (str, optional): Orientation of the colorbar, such as &quot;vertical&quot; and &quot;horizontal&quot;. Defaults to &quot;horizontal&quot;.</span>
+<span class="sd">        dpi (float | str, optional): The resolution in dots per inch.  If &#39;figure&#39;, use the figure&#39;s dpi value. Defaults to &quot;figure&quot;.</span>
+<span class="sd">        transparent (bool, optional): Whether to make the background transparent. Defaults to False.</span>
+<span class="sd">        position (tuple, optional): The position of the colormap in the format of (x, y),</span>
+<span class="sd">            the percentage ranging from 0 to 100, starting from the lower-left corner. Defaults to (0, 0).</span>
+<span class="sd">        **kwargs: Other keyword arguments to pass to matplotlib.pyplot.savefig().</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Path to the output image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">colorbar</span> <span class="o">=</span> <span class="n">save_colorbar</span><span class="p">(</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="p">,</span>
+        <span class="n">palette</span><span class="p">,</span>
+        <span class="n">vis_params</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="p">,</span>
+        <span class="n">discrete</span><span class="p">,</span>
+        <span class="n">label</span><span class="p">,</span>
+        <span class="n">label_size</span><span class="p">,</span>
+        <span class="n">label_weight</span><span class="p">,</span>
+        <span class="n">tick_size</span><span class="p">,</span>
+        <span class="n">bg_color</span><span class="p">,</span>
+        <span class="n">orientation</span><span class="p">,</span>
+        <span class="n">dpi</span><span class="p">,</span>
+        <span class="n">transparent</span><span class="p">,</span>
+        <span class="n">show_colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">colorbar</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -7657,20 +7896,24 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">base64</span>
 
-    <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topleft&quot;</span><span class="p">:</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topright&quot;</span><span class="p">:</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-            <span class="n">image</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;</span><span class="si">{</span><span class="n">image</span><span class="si">}</span><span class="s1">&quot;&gt;&#39;</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="s2">&quot;bottomright&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+        <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topleft&quot;</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;topright&quot;</span><span class="p">:</span>
+                <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">lf</span><span class="p">:</span>
                 <span class="c1"># open in binary mode, read bytes, encode, decode obtained bytes as utf-8 string</span>
                 <span class="n">b64_content</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">lf</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
